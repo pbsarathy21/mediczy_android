@@ -1,0 +1,118 @@
+apply plugin: 'com.android.application'
+
+android {
+    lintOptions {
+        disable 'RestrictedApi'
+    }
+   /* signingConfigs {
+        prithiviraj {
+            keyAlias 'prithiviraj'
+            keyPassword '123456'
+            storeFile file('/Users/contus/Documents/myP/keystore.jks')
+            storePassword '123456'
+        }
+        config {
+        }
+    }*/
+    compileSdkVersion 26
+    buildToolsVersion '26.0.2'
+    useLibrary 'org.apache.http.legacy'
+    defaultConfig {
+        vectorDrawables.useSupportLibrary = true
+        applicationId "app.mediczy_com"
+        minSdkVersion 17
+        targetSdkVersion 26
+        versionCode 22
+        versionName "4.7"
+
+        // Enabling multidex support.
+        multiDexEnabled true
+    }
+    buildTypes {
+        release {
+            shrinkResources false
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+       /* debug {
+            signingConfig signingConfigs.prithiviraj
+        }*/
+    }
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+}
+
+preBuild.doFirst {
+    String[] path = project.buildscript.sourceFile.getParent().split("/")
+    String taskName = path[path.size()-1]
+    if (taskName.contains("-push") && !file("./google-services.json").exists()) {
+        outputFcmBuildError()
+    }
+}
+
+def outputFcmBuildError() {
+    System.err.println 'You are building chat_bot_one of Sinch sample projects that uses Firebase Cloud Messaging for delivering push notifications.'
+    System.err.println 'Android Studio FCM plugin requires \'google-services.json\' with correspondent \'package_name\' to be in gradle :app folder (e.g. in ./sinch-rtc-sample-push/)'
+    System.err.println 'Follow the Firebase Cloud Messaging manual here \'https://firebase.google.com/docs/android/setup\' to get chat_bot_one.'
+    System.err.println 'For details about Sinch Managed push notifications look here \'https://www.sinch.com/docs/voice/android/#pushnotifications\'.'
+    throw new GradleException('google-services.json NOT FOUND!')
+}
+
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile files('libs/picasso.jar')
+    compile files('libs/httpmime-4.2.3.jar')
+    compile files('libs/volley.jar')
+    compile files('libs/acra-4.5.0.jar')
+    compile project(':library')
+    //    compile 'com.google.firebase:firebase-messaging:10.2.1'z
+    compile 'com.android.support:cardview-v7:22.2.0'
+    compile 'com.android.support:design:22.2.1'
+    compile 'com.android.support:support-v4:25.1.1'
+    compile 'com.android.support:appcompat-v7:25.1.1'
+    compile 'com.android.support:multidex:1.0.1'
+    compile 'com.android.support:recyclerview-v7:23.2.1'
+    compile 'com.google.android.gms:play-services:10.0.1'
+    //    compile 'com.google.android.gms:play-services:9.0.1'
+    compile 'com.google.code.gson:gson:2.3'
+    compile 'de.hdodenhof:circleimageview:2.1.0'
+    compile 'org.jsoup:jsoup:1.10.1'
+    compile 'com.google.firebase:firebase-messaging:9.6.1'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    testCompile 'junit:junit:4.12'
+    compile(name: 'sinch-android-rtc', version: '+', ext: 'aar')
+
+    /*chatbox*/
+    compile 'com.squareup.retrofit2:retrofit:2.3.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.3.0'
+    compile 'com.squareup.retrofit2:converter-scalars:2.3.0'
+    compile 'com.squareup.retrofit:retrofit:1.9.0'
+
+    compile 'com.intuit.sdp:sdp-android:1.0.3'
+    // compile 'com.squareup.picasso:picasso:2.4.0'
+    compile 'com.sa90.materialarcmenu:library:1.4'
+    compile 'com.github.moondroid.coverflow:library:1.0'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'com.github.silvestrpredko:dot-progress-bar:1.1'
+    compile 'com.android.support:palette-v7:22.2.0'
+}
+apply plugin: 'com.google.gms.google-services'

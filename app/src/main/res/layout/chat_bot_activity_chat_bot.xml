@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+
+        <app:android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:elevation="@dimen/elevation"
+            android:visibility="visible"
+            app:theme="@style/AppTheme_ToolBar">
+
+
+            <TextView
+                android:id="@+id/t_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:paddingRight="@dimen/_12sdp"
+                android:text=""
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12sdp"
+                android:textStyle="bold" />
+
+
+        </app:android.support.v7.widget.Toolbar>
+
+
+        <LinearLayout
+            android:id="@+id/linea"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#b1f5f2f2"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <ProgressBar
+                android:id="@+id/progr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:progressBackgroundTint="#f49906" />
+
+            <TextView
+                android:id="@+id/ez_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:gravity="center"
+                android:text="medi"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/_20sdp"
+                android:visibility="gone" />
+
+
+        </LinearLayout>
+
+
+        <!--    <android.support.v4.widget.NestedScrollView
+                android:id="@+id/nested_scroll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none"
+                android:visibility="visible">-->
+
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:coverflow="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/kjc"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <it.moondroid.coverflow.components.ui.containers.FeatureCoverFlow
+                android:id="@+id/coverflow"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                coverflow:coverHeight="@dimen/_170sdp"
+                coverflow:coverWidth="@dimen/_110sdp"
+                coverflow:maxScaleFactor="1.5"
+                coverflow:reflectionGap="0px"
+                coverflow:reflectionOpacity="0"
+                coverflow:rotationThreshold="0.5"
+                coverflow:scalingThreshold="0.5"
+                coverflow:spacing="0.6" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:gravity="center"
+                android:text="ncjdnjk"
+                android:textColor="@color/chat_date"
+                android:textSize="@dimen/_13sdp"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:gravity="bottom"
+                android:orientation="vertical">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/chatview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_38sdp"
+                    android:background="@android:color/transparent">
+
+                </android.support.v7.widget.RecyclerView>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <!--
+                <com.github.silvestrpredko.dotprogressbar.DotProgressBar
+                    android:id="@+id/dot_progress_bar"
+                    android:layout_width="50dp"
+                    android:layout_height="11dp"
+                    android:visibility="gone"
+                    custom:amount="5"
+                    custom:duration="@android:integer/config_mediumAnimTime"
+                    custom:endColor="@color/light_blue_A400"
+                    custom:startColor="@color/light_blue_A700"
+                    custom:animationDirection="left"/>-->
+
+
+        <!-- </android.support.v4.widget.NestedScrollView>-->
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/linear_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_35sdp"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="5dp"
+        android:orientation="vertical"
+        android:weightSum="1">
+
+        <LinearLayout
+            android:id="@+id/line_rob"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+
+            <RelativeLayout
+                android:id="@+id/linear_left_rob"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+
+                <RelativeLayout
+                    android:id="@+id/vkv_rob"
+                    android:layout_width="@dimen/_38sdp"
+                    android:layout_height="@dimen/_58sdp">
+
+                    <ImageView
+                        android:id="@+id/rob_rob"
+                        android:layout_width="@dimen/_35sdp"
+                        android:layout_height="@dimen/_35sdp"
+                        android:layout_alignParentTop="true"
+                        android:layout_margin="@dimen/_1sdp"
+                        android:clickable="true" />
+
+                </RelativeLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_toRightOf="@+id/vkv_rob"
+                    android:orientation="horizontal">
+
+
+                    <ImageView
+                        android:id="@+id/Img_down_rob"
+                        android:layout_width="@dimen/_13sdp"
+                        android:layout_height="@dimen/_13sdp"
+                        android:layout_marginRight="-5dp"
+                        android:background="@drawable/edd"
+                        android:visibility="visible" />
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="0.2"
+                        android:background="@drawable/chat_bot_cb_left"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+
+                        <LinearLayout
+                            android:id="@+id/linear_mess_left_rob"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="@dimen/_5sdp"
+                            android:visibility="visible">
+
+                            <TextView
+                                android:id="@+id/replyMsg_Txt_left_rob"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/_4sdp"
+                                android:layout_marginTop="@dimen/_4sdp"
+                                android:gravity="center|left"
+                                android:text="Click Yes Button"
+                                android:textColor="@color/chat"
+                                android:textSize="@dimen/_10sdp"
+                                android:visibility="gone" />
+
+                            <com.github.silvestrpredko.dotprogressbar.DotProgressBar
+                                android:id="@+id/dot_progress_bar"
+                                android:layout_width="50dp"
+                                android:layout_height="11dp"
+                                android:layout_marginBottom="@dimen/_4sdp"
+                                android:layout_marginTop="@dimen/_4sdp"
+                                custom:amount="5"
+                                custom:animationDirection="left"
+                                custom:duration="@android:integer/config_mediumAnimTime"
+                                custom:endColor="@color/light_blue_A400"
+                                custom:startColor="@color/light_blue_A700" />
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linear_rob"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right|bottom"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:layout_weight="0.3"
+                        android:gravity="right|bottom"
+                        android:orientation="horizontal"
+                        android:visibility="visible">
+
+
+                        <TextView
+                            android:id="@+id/text_time_left_rob"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="bottom"
+                            android:text=""
+                            android:textAllCaps="true"
+                            android:textColor="@color/detail_head"
+                            android:textSize="@dimen/_8sdp" />
+
+
+                    </LinearLayout>
+                </LinearLayout>
+
+
+            </RelativeLayout>
+        </LinearLayout>
+
+        <include layout="@layout/chat_bot_chat_bottom" />
+    </LinearLayout>
+
+</FrameLayout>

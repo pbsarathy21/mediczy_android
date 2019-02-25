@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--    <FrameLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/frameLayout_insurance"
+            android:layout_marginTop="@dimen/Margin_3"
+            android:paddingTop="?attr/actionBarSize">
+        </FrameLayout>-->
+
+    <!--<app:android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_insurance1"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:theme="@style/AppTheme_ToolBar"
+        android:elevation="@dimen/elevation"/>-->
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/insurance_card_list"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:visibility="gone"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="@dimen/Margin_5"
+        android:layout_marginRight="@dimen/Margin_5"
+        android:layout_marginTop="@dimen/Margin_10"
+        android:layout_marginBottom="@dimen/Margin_8"
+        card_view:cardCornerRadius="3dp"
+        card_view:cardElevation="6dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/Margin_5"
+            android:layout_marginRight="@dimen/Margin_5">
+
+            <Spinner
+                android:id="@+id/spinner_insurance_city"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_alignParentTop="true"
+                android:hint="City" />
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view_insurance_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/insurance_card_list"
+        android:clipToPadding="false"
+        android:scrollbars="vertical" />
+
+
+</RelativeLayout>

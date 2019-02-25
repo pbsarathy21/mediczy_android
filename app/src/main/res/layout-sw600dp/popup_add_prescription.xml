@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#cdcdcd"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView_popup_add_prescription"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:maxLines="1"
+                    android:text="ADD PRESCRIPTION"
+                    android:textSize="17sp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_popup__add_prescription"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="61dp"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/editText_popup__add_prescription_subject"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="#f0f0f0"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/text_gray"
+                    android:ems="10"
+                    android:gravity="top|left"
+                    android:hint="Subject..."
+                    android:inputType="textMultiLine"
+                    android:layout_weight="1"
+                    android:maxLength="2000"
+                    android:maxLines="43"
+                    android:padding="@dimen/Margin_4">
+
+                    <requestFocus />
+                </EditText>
+
+                <EditText
+                    android:id="@+id/editText_popup__add_prescription"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@id/editText_popup__add_prescription_subject"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="#f0f0f0"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/text_gray"
+                    android:ems="10"
+                    android:gravity="top|left"
+                    android:hint="Type your prescription here..."
+                    android:inputType="textMultiLine"
+                    android:layout_weight="1"
+                    android:maxLength="2000"
+                    android:maxLines="43"
+                    android:padding="@dimen/Margin_4">
+                </EditText>
+
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Do you want to send free code ?"
+                    android:textColor="@color/gplus_color_1"
+                    android:textStyle="bold"
+                    android:textSize="14sp"
+                    android:checked="false"
+                    android:id="@+id/toggleButton_send_prescription"
+                    android:layout_marginTop="5dp"
+                    android:layout_below="@+id/editText_popup__add_prescription"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true"/>
+
+
+                <RelativeLayout
+                    android:id="@+id/relative_layout_add_pres"
+                    android:layout_width="fill_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/toggleButton_send_prescription">
+
+                    <View
+                        android:id="@+id/view3_pres_top"
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_alignParentTop="true"
+                        android:background="#cdcdcd" />
+
+
+                    <View
+                        android:id="@+id/view3_pres"
+                        android:layout_width="0.5dip"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/view3_pres_top"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="80dp"
+                        android:background="#cdcdcd" />
+
+                    <TextView
+                        android:id="@+id/textView_pres_send"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_below="@+id/view3_pres_top"
+                        android:layout_toRightOf="@+id/view3_pres"
+                        android:gravity="center"
+                        android:text="SEND"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/textView_pres_cancel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_below="@+id/view3_pres_top"
+                        android:layout_alignRight="@+id/view3_pres"
+                        android:gravity="center"
+                        android:text="CANCEL"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+                </RelativeLayout>
+
+
+
+            </RelativeLayout>
+
+        </FrameLayout>
+    </LinearLayout>
+
+</LinearLayout>

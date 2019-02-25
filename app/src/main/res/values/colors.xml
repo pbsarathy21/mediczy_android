@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#40c4be</color>
+    <color name="colorPrimaryDark">#3db4af</color>
+    <color name="colorAccent">#1ab6e4</color>
+
+    <color name="notification_color">#1ab6e4</color>
+
+    <color name="color_1">#1ab6e4</color>
+    <color name="color_3">#09d760</color>
+
+    <color name="gray_1">#666666</color>
+    <color name="light_gray">#D3D3D3</color>
+    <color name="gray_light">#A6A8AB</color>
+    <color name="light_gray_text">#848484</color>
+    <color name="gray">#575757</color>1
+
+    <!--chat bot-->
+    <color name="red_list">#e3001c</color>
+    <color name="gfdgdfblu">#3982ce</color>
+    <color name="orang">#f08080</color>
+    <color name="blue_j">#75d6f7</color>
+    <color name="chat_date">#4A4A4A</color>
+    <color name="chat_time">#6C6C6C</color>
+    <color name="chat">#272727</color>
+    <color name="check_color">#ededed</color>
+    <color name="bj">#e1e0e0</color>
+    <color name="detail_head">#aaaaaa</color>
+    <color name="white_transparent">#1AFFFFFF</color>
+    <color name="fab_menu_coclor">#238BFA</color>
+    <!--chat bot-->
+
+    <color name="black">#000000</color>
+    <color name="text_gray">#7a7a7a</color>
+    <color name="chat_bg_1">#d5e3a5</color>
+
+    <color name="toolbar_activity_color">#FFFFFF</color>
+    <color name="white">#ffffff</color>
+    <color name="video_call_top_bg">#fffafafa</color>
+    <color name="transparent">#22FFFFFF</color>
+    <color name="blue_1">#34acdd</color>
+    <color name="blue_light">#88ceeb</color>
+    <color name="light_text">#A6A8AB</color>
+    <color name="dark_text">#58595B</color>
+    <color name="green_1">#3bff3b</color>
+    <color name="red1">#dd3458</color>
+    <color name="gplus_color_1">#3e802f</color>
+
+
+    <!--videocalling-->
+    <color name="red">#FF0000</color>
+    <color name="green">#00FF00</color>
+    <color name="light_green">#90EE90</color>
+
+    <!--video call-->
+    <color name="sinch_purple">#ff63029d</color>
+    <color name="off_white">#fffafafa</color>
+    <color name="greyish">#fff2f1f2</color>
+
+    <!--chat-->
+    <color name="main_color_gray">#7d7d7d</color>
+    <color name="cardview_dark_background">#FF424242</color>
+    <color name="cardview_light_background">#FFFFFFFF</color>
+    <color name="cardview_shadow_end_color">#03000000</color>
+    <color name="cardview_shadow_start_color">#37000000</color>
+
+    <color name="default_bubble_color_rcv">@color/black</color>
+    <color name="default_bubble_color_send">@color/white</color>
+
+    <color name="default_tstamp_color_send">#7d7d7d</color>
+
+    <color name="default_message_color_send">@color/black</color>
+
+</resources>

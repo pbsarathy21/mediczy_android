@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="60dp">
+
+    <RelativeLayout
+        android:id="@+id/relative_custom_action_bar_chat"
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentTop="true"
+        android:elevation="@dimen/elevation">
+
+        <RelativeLayout
+            android:id="@+id/relative_custom_action_bar_chat_1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true">
+
+            <RelativeLayout
+                android:id="@+id/relative_custom_action_bar_chat_11"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true">
+
+                <ImageView
+                    android:id="@+id/iv_back_chat_detail_msg_chat"
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginBottom="@dimen/Margin_10"
+                    android:layout_marginLeft="@dimen/Margin_2"
+                    android:contentDescription="@string/description"
+                    android:src="@drawable/back_arrow_white" />
+
+<!--                <ImageView
+                    android:id="@+id/iv_left_chat_detail_msg_chat"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/Margin_15"
+                    android:visibility="gone"
+                    android:layout_toRightOf="@+id/iv_back_chat_detail_msg_chat"
+                    android:contentDescription="@string/description"
+                    android:background="@drawable/image_circle"/>-->
+
+                <app.mediczy_com.utility.CircularImageView
+                    android:id="@+id/iv_left_chat_detail_msg_chat"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/Margin_15"
+                    android:visibility="gone"
+                    android:layout_toRightOf="@+id/iv_back_chat_detail_msg_chat"
+                    android:contentDescription="@string/description"
+                    android:src="@drawable/no_image_1"
+                    app:civ_border="false"
+                    app:civ_borderColor="@color/blue_1"
+                    app:civ_borderWidth="1dp"
+                    app:civ_selector="false"
+                    app:civ_selectorStrokeWidth="1dp"
+                    app:civ_shadow="true" />
+
+                <TextView
+                    android:id="@+id/tv_left_chat_detail_msg_chat_name"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/Margin_15"
+                    android:layout_toRightOf="@+id/iv_back_chat_detail_msg_chat"
+                    android:background="@drawable/circle_chat_txt"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="p"
+                    android:textColor="@color/white"
+                    android:textSize="28sp"
+                    android:textStyle="bold"
+                    android:visibility="visible"/>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/textView__custom_action_bar_chat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/Margin_5"
+                android:layout_toRightOf="@+id/relative_custom_action_bar_chat_11"
+                android:text="@string/app_name"
+                android:singleLine="true"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:visibility="visible" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+</RelativeLayout>

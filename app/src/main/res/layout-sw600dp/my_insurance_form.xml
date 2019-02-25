@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/insurance_faq"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/Margin_5"
+        android:background="@color/color_1"
+        android:text="Insurance FAQ"
+        android:textColor="@color/white"
+        android:textSize="15sp" />
+
+    <ScrollView
+        android:id="@+id/insurance_ScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/insurance_faq"
+        android:layout_above="@+id/submit_insurance"
+        android:layout_alignParentLeft="true">
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/insurance_card"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="@dimen/Margin_10"
+                android:layout_marginLeft="@dimen/Margin_5"
+                android:layout_marginRight="@dimen/Margin_5"
+                card_view:cardCornerRadius="3dp"
+                card_view:cardElevation="6dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/Margin_5"
+                    android:layout_marginRight="@dimen/Margin_5">
+
+
+
+                    <RelativeLayout
+                        android:id="@+id/insurance_rl_comp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/Margin_5">
+
+                        <Spinner
+                            android:id="@+id/spinner_insurance_comp"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_marginTop="10dp"
+                            android:visibility="visible"
+                            android:hint="First Name" />
+
+                  <!--      <android.support.design.widget.TextInputLayout
+                            android:id="@+id/editText__policy_num1"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true">
+
+                            <EditText
+                                android:id="@+id/editText_policy_num1"
+                                style="@style/CustomEditText_Register"
+                                android:ems="10"
+                                android:hint="Policy Number"
+                                android:inputType="number" />
+                        </android.support.design.widget.TextInputLayout>
+-->
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/header_policy_num"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/insurance_rl_comp"
+                        android:layout_marginTop="@dimen/Margin_12">
+
+                        <android.support.design.widget.TextInputLayout
+                            android:id="@+id/editText__policy_num"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true">
+
+                            <EditText
+                                android:id="@+id/editText_policy_num"
+                                style="@style/CustomEditText_Register"
+                                android:ems="10"
+                                android:hint="Policy Number"
+                                android:inputType="text" />
+                        </android.support.design.widget.TextInputLayout>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/header_sum_assured"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/header_policy_num"
+                        android:layout_marginTop="@dimen/Margin_5">
+
+                        <android.support.design.widget.TextInputLayout
+                            android:id="@+id/editText__sum_assured"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true">
+
+                            <EditText
+                                android:id="@+id/editText_sum_assured"
+                                style="@style/CustomEditText_Register"
+                                android:ems="10"
+                                android:hint="Sum Assured"
+                                android:inputType="text" />
+                        </android.support.design.widget.TextInputLayout>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/header_date"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/header_sum_assured"
+                        android:layout_marginTop="@dimen/Margin_5">
+
+                        <app.mediczy_com.utility.TextViewFont
+                            android:id="@+id/tv_font_date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_marginLeft="@dimen/Margin_5"
+                            android:layout_marginBottom="@dimen/Margin_15"
+                            android:layout_marginTop="@dimen/Margin_15"
+                            android:text="@string/education"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/Text_size_30" />
+
+                        <TextView
+                            android:id="@+id/tv_date_start"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/Margin_15"
+                            android:layout_marginTop="@dimen/Margin_20"
+                            android:layout_toLeftOf="@+id/textView_register_app_empty"
+                            android:layout_toRightOf="@+id/tv_font_date"
+                            android:text="Start Date"
+                            android:textColor="@color/text_gray"
+                            android:textSize="18sp" />
+
+                        <View
+                            android:id="@+id/textView_register_app_empty"
+                            android:layout_width="1dp"
+                            android:layout_height="30dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_margin="@dimen/Margin_10"
+                            android:background="@color/light_gray" />
+
+                        <app.mediczy_com.utility.TextViewFont
+                            android:id="@+id/tv_font_date_end"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginBottom="@dimen/Margin_15"
+                            android:layout_marginTop="@dimen/Margin_15"
+                            android:layout_marginRight="@dimen/Margin_5"
+                            android:text="@string/education"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/Text_size_30" />
+
+                        <TextView
+                            android:id="@+id/tv_date_end"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/Margin_15"
+                            android:layout_marginTop="@dimen/Margin_20"
+                            android:layout_toLeftOf="@+id/tv_font_date_end"
+                            android:text="End Date"
+                            android:textColor="@color/text_gray"
+                            android:textSize="18sp" />
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/header_dept"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/header_date"
+                        android:layout_marginTop="@dimen/Margin_5">
+
+<!--                        <Spinner
+                            android:id="@+id/tv_dept"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_marginBottom="@dimen/Margin_15"
+                            android:layout_marginTop="@dimen/Margin_15"
+                            android:layout_marginRight="@dimen/Margin_5"
+                            android:layout_toLeftOf="@+id/textView_inc_adult"
+                            android:layout_toStartOf="@+id/textView_inc_adult"
+                            android:ems="10"
+                            android:hint="First Name" />-->
+
+                        <TextView
+                            android:id="@+id/tv_dept"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_marginBottom="@dimen/Margin_15"
+                            android:layout_marginTop="@dimen/Margin_15"
+                            android:layout_marginRight="@dimen/Margin_5"
+                            android:layout_toLeftOf="@+id/textView_inc_adult"
+                            android:textSize="@dimen/Text_size_16"
+                            android:text="Dependants" />
+
+                        <Spinner
+                            android:id="@+id/textView_inc_adult"
+                            android:layout_width="117dp"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginBottom="@dimen/Margin_15"
+                            android:layout_marginTop="@dimen/Margin_15"
+                            android:layout_marginRight="@dimen/Margin_5"
+                            android:ems="10"
+                            android:hint="First Name" />
+
+                        <Spinner
+                            android:id="@+id/tv_child"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginBottom="@dimen/Margin_15"
+                            android:layout_marginTop="@dimen/Margin_15"
+                            android:layout_marginRight="@dimen/Margin_5"
+                            android:layout_toRightOf="@+id/textView_inc_adult"
+                            android:ems="10"
+                            android:hint="First Name" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/header_emp_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/header_dept"
+                        android:layout_marginTop="@dimen/Margin_5">
+
+                        <android.support.design.widget.TextInputLayout
+                            android:id="@+id/editText__emp_name"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true">
+
+                            <EditText
+                                android:id="@+id/editText_emp_name"
+                                style="@style/CustomEditText_Register"
+                                android:ems="10"
+                                android:hint="Employer Name"
+                                android:inputType="textCapWords" />
+                        </android.support.design.widget.TextInputLayout>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/header_emp_id"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/header_emp_name"
+                        android:layout_marginTop="@dimen/Margin_5">
+
+                        <android.support.design.widget.TextInputLayout
+                            android:id="@+id/editText__emp_id"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true">
+
+                            <EditText
+                                android:id="@+id/editText_emp_id"
+                                style="@style/CustomEditText_Register"
+                                android:ems="10"
+                                android:hint="ID Proof(Not Mandatory)"
+                                android:inputType="text" />
+                        </android.support.design.widget.TextInputLayout>
+                    </RelativeLayout>
+
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/submit_insurance"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/Margin_5"
+        android:text="Submit"
+        android:background="@drawable/btn_border_blue"
+        android:textColor="@color/white"
+        android:textSize="15sp" />
+
+</RelativeLayout>

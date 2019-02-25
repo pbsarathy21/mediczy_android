@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/tools">
+
+    <include
+        android:id="@+id/tool_bar_delivery_from"
+        layout="@layout/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <ScrollView
+        android:id="@+id/delivery_from_ScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tool_bar_delivery_from"
+        android:layout_above="@+id/submit_del_from"
+        android:layout_alignParentLeft="true">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/delivery_from_card"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="@dimen/Margin_5"
+            android:layout_marginRight="@dimen/Margin_5"
+            android:layout_marginTop="@dimen/Margin_10"
+            card_view:cardCornerRadius="3dp"
+            card_view:cardElevation="6dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/Margin_5"
+                android:layout_marginRight="@dimen/Margin_5"
+                android:orientation="vertical">
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/editText__del_from_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/Margin_5"
+                    android:layout_alignParentLeft="true">
+
+                    <EditText
+                        android:id="@+id/editText_del_from_name"
+                        style="@style/CustomEditText_Register"
+                        android:ems="10"
+                        android:hint="Name"
+                        android:inputType="text" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/editText__del_from_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/editText__del_from_name"
+                    android:layout_marginTop="@dimen/Margin_10">
+
+                    <EditText
+                        android:id="@+id/editText_del_from_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_below="@+id/editText__del_from_name"
+                        android:layout_marginTop="@dimen/Margin_10"
+                        android:ems="10"
+                        android:hint="Address"
+                        android:autoLink="all"
+                        android:lines="5"
+                        android:minLines="1"
+                        android:gravity="top|left"
+                        android:maxLines="10"
+                        android:inputType="textMultiLine|textCapSentences" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/editText__del_from_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/editText__del_from_address"
+                    android:layout_marginTop="@dimen/Margin_10">
+
+                    <EditText
+                        android:id="@+id/editText_del_from_phone"
+                        style="@style/CustomEditText_Register"
+                        android:ems="10"
+                        android:hint="Phone Number"
+                        android:inputType="phone" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/editText__del_from_city"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/editText__del_from_phone"
+                    android:layout_marginTop="@dimen/Margin_10">
+
+                    <EditText
+                        android:id="@+id/editText_del_from_city"
+                        style="@style/CustomEditText_Register"
+                        android:ems="10"
+                        android:hint="City"
+                        android:inputType="text" />
+                </android.support.design.widget.TextInputLayout>
+
+                <Spinner
+                    android:id="@+id/spinner_del_from_state"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/editText__del_from_city"
+                    android:layout_marginTop="@dimen/Margin_10"
+                    android:ems="10"
+                    android:hint="State" />
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/editText__del_from_zip"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/spinner_del_from_state"
+                    android:layout_marginTop="@dimen/Margin_10">
+
+                    <EditText
+                        android:id="@+id/editText_del_from_zip"
+                        style="@style/CustomEditText_Register"
+                        android:ems="10"
+                        android:hint="Zip"
+                        android:inputType="number" />
+                </android.support.design.widget.TextInputLayout>
+
+                <Spinner
+                    android:id="@+id/spinner_del_from_country"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/editText__del_from_zip"
+                    android:layout_marginTop="@dimen/Margin_10"
+                    android:ems="10"
+                    android:hint="Country" />
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/Margin_5"
+                    android:layout_below="@+id/spinner_del_from_country">
+
+                    <TextView
+                        android:id="@+id/textView_del_from_date_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginTop="@dimen/Margin_15"
+                        android:text="@string/Select_date_time"
+                        android:textSize="@dimen/Text_size_18" />
+
+                    <TextView
+                        android:id="@+id/textView_del_from_date_time_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/Margin_10"
+                        android:layout_marginTop="@dimen/Margin_15"
+                        android:layout_toRightOf="@+id/textView_del_from_date_time"
+                        android:text="Select Date and Time"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/Text_size_18" />
+
+                </RelativeLayout>
+            </RelativeLayout>
+
+
+        </android.support.v7.widget.CardView>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/submit_del_from"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/Margin_5"
+        android:text="Submit"
+        android:background="@drawable/btn_border_blue"
+        android:textColor="@color/white"
+        android:textSize="15sp" />
+
+</RelativeLayout>

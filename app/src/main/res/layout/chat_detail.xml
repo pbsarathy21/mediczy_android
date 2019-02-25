@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/nav_bg"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_chat"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="@dimen/tool_bar_elevation"
+        app:theme="@style/AppTheme_ToolBarChat">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <include
+                android:id="@+id/chat_tool_action_chat"
+                layout="@layout/custom_actionbar_chat_detail"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </RelativeLayout>
+
+    </android.support.v7.widget.Toolbar>
+
+    <ProgressBar
+        android:id="@+id/progress_loading_chat_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:visibility="gone" />
+
+    <ListView
+        android:id="@+id/recycler_chat_detail_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/rl_chat_detail_msg_card"
+        android:layout_below="@+id/toolbar_chat"
+        android:clipToPadding="false"
+        android:divider="@android:color/transparent"
+        android:stackFromBottom="true"
+        android:transcriptMode="alwaysScroll" />
+
+    <RelativeLayout
+        android:id="@+id/rl_chat_list_empty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/progress_loading_chat_detail">
+
+        <ImageView
+            android:id="@+id/iv_chat_list_empty"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/conv_empty" />
+
+        <TextView
+            android:id="@+id/tv_chat_list_empty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iv_chat_list_empty"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="Start a Conversation"
+            android:textColor="@color/text_gray"
+            android:textSize="@dimen/Text_size_18"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_chat_detail_msg_card"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/Margin_57"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:background="@drawable/nav_bg">
+
+        <RelativeLayout
+            android:id="@+id/rl_chat_detail_msg_1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/Margin_3"
+            android:layout_marginBottom="@dimen/Margin_3"
+            android:layout_toLeftOf="@+id/iv_chat_detail_send_message"
+            android:background="@color/white">
+
+            <RelativeLayout
+                android:id="@+id/rl_chat_detail_msg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cv__detail_send_message"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    app:cardElevation="@dimen/elevation">
+
+                    <EditText
+                        android:id="@+id/ed_chat_detail_send_message"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/edit_text_oval"
+                        android:ems="10"
+                        android:hint="@string/edittext_chat_hint"
+                        android:inputType="textCapSentences|textMultiLine"
+                        android:maxLines="5"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/main_color_gray"
+                        android:textSize="@dimen/default_input_text_size" />
+                </android.support.v7.widget.CardView>
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/iv_chat_detail_send_message"
+            android:layout_width="@dimen/Margin_45"
+            android:layout_height="@dimen/Margin_45"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="@dimen/Margin_2"
+            android:layout_marginRight="@dimen/Margin_5"
+            android:layout_marginLeft="@dimen/Margin_5"
+            android:src="@drawable/msg_send"
+            android:visibility="visible" />
+    </RelativeLayout>
+
+</RelativeLayout>

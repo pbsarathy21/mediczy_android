@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <app:android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_doctor_prescribed_detail"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:theme="@style/AppTheme_ToolBar"
+        android:elevation="@dimen/elevation"/>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:paddingTop="?attr/actionBarSize">
+
+        <ScrollView
+            android:id="@+id/scrollView_register"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:scrollbars="none">
+
+
+            <RelativeLayout
+                android:id="@+id/relative_view_doctor_prescribed_detail_all"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RelativeLayout
+                    android:id="@+id/relative_view_doctor_prescribed_detail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="30dp">
+
+                    <TextView
+                        android:id="@+id/textView_heading_doctor_prescribed_detail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Prescribed Medications"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textView_doctor_prescribed_detail_date_heading"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/textView_heading_doctor_prescribed_detail"
+                        android:layout_marginTop="20dp"
+                        android:layout_alignParentLeft="true"
+                        android:text="Date"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:layout_alignRight="@+id/textView_doctor_prescribed_detail_patient_heading"
+                        android:layout_alignEnd="@+id/textView_doctor_prescribed_detail_patient_heading" />
+
+                    <TextView
+                        android:id="@+id/textView_doctor_prescribed_detail_date_heading_dots"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/textView_heading_doctor_prescribed_detail"
+                        android:layout_marginTop="20dp"
+                        android:text=":"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:layout_alignRight="@+id/textView_doctor_prescribed_detail_date_heading"
+                        android:layout_alignEnd="@+id/textView_doctor_prescribed_detail_date_heading" />
+
+
+                    <TextView
+                        android:id="@+id/textView_doctor_prescribed_detail_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/textView_heading_doctor_prescribed_detail"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_toRightOf="@+id/textView_doctor_prescribed_detail_date_heading"
+                        android:text=""
+                        android:textSize="16sp" />
+
+
+                    <TextView
+                        android:id="@+id/textView_doctor_prescribed_detail_patient_heading"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/textView_doctor_prescribed_detail_date_heading"
+                        android:layout_marginTop="12dp"
+                        android:text="Patient Name    :"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/textView_doctor_prescribed_detail_patient_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/textView_doctor_prescribed_detail_date_heading"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_toRightOf="@+id/textView_doctor_prescribed_detail_patient_heading"
+                        android:text=""
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/textView_doctor_prescribed_detail_phone_heading"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/textView_doctor_prescribed_detail_patient_heading"
+                        android:layout_marginTop="12dp"
+                        android:layout_alignParentLeft="true"
+                        android:text="Phone"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:layout_alignRight="@+id/textView_doctor_prescribed_detail_patient_heading"
+                        android:layout_alignEnd="@+id/textView_doctor_prescribed_detail_patient_heading" />
+
+                    <TextView
+                        android:id="@+id/textView_doctor_prescribed_detail_phone_heading_dots"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/textView_doctor_prescribed_detail_patient_heading"
+                        android:layout_marginTop="12dp"
+                        android:text=":"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:layout_alignRight="@+id/textView_doctor_prescribed_detail_patient_heading"
+                        android:layout_alignEnd="@+id/textView_doctor_prescribed_detail_patient_heading" />
+
+
+                    <TextView
+                        android:id="@+id/textView_doctor_prescribed_detail_phone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/textView_doctor_prescribed_detail_patient_heading"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_toRightOf="@+id/textView_doctor_prescribed_detail_phone_heading"
+                        android:text=""
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/textView_doctor_prescribed_detail_date1_heading"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/textView_doctor_prescribed_detail_phone_heading"
+                        android:layout_marginTop="12dp"
+                        android:layout_alignParentLeft="true"
+                        android:text="Date of Birth"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:layout_toLeftOf="@+id/textView_doctor_prescribed_detail_phone" />
+
+                    <TextView
+                        android:id="@+id/textView_doctor_prescribed_detail_date1_heading_dots"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/textView_doctor_prescribed_detail_phone_heading"
+                        android:layout_marginTop="12dp"
+                        android:text=":"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:layout_alignRight="@+id/textView_doctor_prescribed_detail_patient_heading"
+                        android:layout_alignEnd="@+id/textView_doctor_prescribed_detail_patient_heading" />
+
+                    <TextView
+                        android:id="@+id/textView_doctor_prescribed_detail_date1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/textView_doctor_prescribed_detail_phone_heading"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_toRightOf="@+id/textView_doctor_prescribed_detail_date1_heading"
+                        android:text=""
+                        android:textSize="16sp" />
+
+
+                    <TextView
+                        android:id="@+id/textView_doctor_prescribed_detail_desc_heading"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/textView_doctor_prescribed_detail_date1_heading"
+                        android:layout_marginTop="30dp"
+                        android:text="Doctor Prescribed"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/textView_doctor_prescribed_detail_desc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/textView_doctor_prescribed_detail_desc_heading"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="20dp"
+                        android:text=""
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/textView_doctor_prescribed_detail_doctor_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_below="@+id/textView_doctor_prescribed_detail_desc"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="40dp"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/textView_doctor_prescribed_detail_doctor_degree"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_below="@+id/textView_doctor_prescribed_detail_doctor_name"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <ImageView
+                        android:layout_width="90dp"
+                        android:layout_height="43dp"
+                        android:id="@+id/imageView_prescribed_detail_sign"
+                        android:layout_below="@+id/textView_doctor_prescribed_detail_doctor_degree"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="10dp" />
+
+                    <TextView
+                        android:id="@+id/textView_doctor_prescribed_detail_doctor_reg_no"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_below="@+id/imageView_prescribed_detail_sign"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+
+                    <TextView
+                        android:id="@+id/textView_doctor_prescribed_detail_doctor_reg__empty"
+                        android:layout_width="wrap_content"
+                        android:layout_height="10dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_below="@+id/textView_doctor_prescribed_detail_doctor_reg_no"
+                        android:layout_marginRight="10dp"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/textView_doctor_prescribed_detail_doctor_reg_note"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_below="@+id/textView_doctor_prescribed_detail_doctor_reg__empty"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="25dp"
+                        android:text="*Note"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/textView_doctor_prescribed_detail_doctor_reg_note1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_below="@+id/textView_doctor_prescribed_detail_doctor_reg_note"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginRight="20dp"
+                        android:text="@string/prescription_default_message"
+                        android:textColor="@color/text_gray"
+                        android:textSize="@dimen/Text_size_12" />
+
+
+                </RelativeLayout>
+            </RelativeLayout>
+        </ScrollView>
+    </RelativeLayout>
+
+</RelativeLayout>

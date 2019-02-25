@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/vd_image_image_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:clickable="true"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/vd_image_view_pager_image"
+            android:layout_width="fill_parent"
+            android:layout_height="210dp" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="210dp"
+            android:background="@drawable/gradient_top"/>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="210dp"
+            android:background="@drawable/gradient_bottom"/>
+
+        <ImageView
+            android:id="@+id/vd_image_no_image"
+            android:layout_width="fill_parent"
+            android:layout_height="210dp"
+            android:background="@drawable/no_image"
+            android:visibility="gone" />
+
+        <RelativeLayout
+            android:id="@+id/vd_image__Left_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|center_vertical">
+
+            <TextView
+                android:id="@+id/vd_image__tv_Arrow"
+                android:layout_width="40dp"
+                android:layout_height="50dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/ic_hardware_keyboard_arrow_left"
+                android:shadowColor="#000000"
+                android:shadowDx="2"
+                android:shadowDy="1"
+                android:shadowRadius="3"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/vd_image__Right_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical">
+
+            <TextView
+                android:id="@+id/vd_image__Arrow1"
+                android:layout_width="40dp"
+                android:layout_height="50dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/ic_hardware_keyboard_arrow_right"
+                android:shadowColor="#000000"
+                android:shadowDx="1"
+                android:shadowDy="2"
+                android:shadowRadius="3"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+        </RelativeLayout>
+
+    </FrameLayout>
+
+</LinearLayout>

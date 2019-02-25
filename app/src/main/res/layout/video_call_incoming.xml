@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl_video_call_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/video_call_top_bg"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/remoteUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:text="Sample user"
+            android:textColor="@color/sinch_purple"
+            android:textSize="28sp" />
+
+        <TextView
+            android:id="@+id/callState"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/remoteUser"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:text="Incoming call"
+            android:textAllCaps="true"
+            android:textColor="@color/sinch_purple"
+            android:textSize="16sp" />
+
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/rl_video_call_bottom"
+        android:layout_below="@+id/rl_video_call_top"
+        android:contentDescription="Call background"
+        android:src="@drawable/app_logo">
+
+    </ImageView>
+
+    <RelativeLayout
+        android:id="@+id/rl_video_call_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/greyish"
+        android:padding="@dimen/Margin_15">
+
+        <TextView
+            android:id="@+id/tv_video_empty"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:text=""
+            android:textColor="@color/sinch_purple"
+            android:textSize="28sp" />
+
+        <Button
+            android:id="@+id/answerButton"
+            android:layout_width="125dp"
+            android:layout_height="45dp"
+            android:layout_marginRight="@dimen/Margin_5"
+            android:layout_toLeftOf="@+id/tv_video_empty"
+            android:background="@drawable/btn_border_green"
+            android:text="ANSWER"
+            android:textColor="@color/white"
+            android:textSize="@dimen/Text_size_16"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/declineButton"
+            android:layout_width="125dp"
+            android:layout_height="45dp"
+            android:layout_marginLeft="@dimen/Margin_5"
+            android:layout_toRightOf="@+id/tv_video_empty"
+            android:background="@drawable/btn_border_red"
+            android:text="DECLINE"
+            android:textColor="@color/white"
+            android:textSize="@dimen/Text_size_16"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

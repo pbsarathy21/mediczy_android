@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "921109355715",
+    "firebase_url": "https://mediczy-938aa.firebaseio.com",
+    "project_id": "mediczy-938aa",
+    "storage_bucket": "mediczy-938aa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:921109355715:android:5452361ede5b7d00",
+        "android_client_info": {
+          "package_name": "app.mediczy_com"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "921109355715-bfos2a0ubuqr6al9vip1ea2crhidems2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "app.mediczy_com",
+            "certificate_hash": "077a7019287f8a2da997b937b9ddf48ee0898241"
+          }
+        },
+        {
+          "client_id": "921109355715-5uh8cnmqkrvlicfttgq05ma5amujpsqj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_ZRsx-qQ25EUo7d_7jXQIMUuQyiLe4aQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "921109355715-5uh8cnmqkrvlicfttgq05ma5amujpsqj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

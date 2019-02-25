@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="60dp">
+
+    <RelativeLayout
+        android:id="@+id/relative_custom_action_bar_detals"
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentTop="true"
+        android:elevation="@dimen/elevation">
+
+        <RelativeLayout
+            android:id="@+id/relative_custom_action_bar_detals_1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true">
+
+            <TextView
+                android:id="@+id/textView__custom_action_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:maxLength="20"
+                android:text="@string/app_name"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:visibility="visible" />
+
+            <RadioButton
+                android:id="@+id/toggleButton_online_offline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/Margin_5"
+                android:layout_toRightOf="@+id/textView__custom_action_bar"
+                android:checked="true"
+                android:text="Online"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relative_custom_action_bar_chat_menu"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:visibility="visible">
+
+            <app.mediczy_com.utility.TextViewFont
+                android:id="@+id/imageButton__custom_action_bar_back_card_buy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/Margin_15"
+                android:text="@string/card_buy"
+                android:textColor="@color/white"
+                android:textSize="@dimen/Text_size_30" />
+
+            <ImageView
+                android:id="@+id/imageButton__custom_action_bar_back_chat"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/Margin_15"
+                android:layout_toLeftOf="@+id/imageButton__custom_action_bar_back_card_buy"
+                android:background="@drawable/chat_home" />
+
+            <TextView
+                android:id="@+id/tv_left_chat_notification"
+                android:layout_width="17dp"
+                android:layout_height="17dp"
+                android:layout_marginRight="@dimen/Margin_12"
+                android:layout_marginTop="@dimen/Margin_10"
+                android:layout_toLeftOf="@+id/imageButton__custom_action_bar_back_card_buy"
+                android:background="@drawable/circle_txt"
+                android:maxLines="1"
+                android:text=""
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:visibility="visible" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relative_custom_action_bar_edit_insurance"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:visibility="visible">
+
+            <app.mediczy_com.utility.TextViewFont
+                android:id="@+id/tv_actionBar_edit_insurance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/Margin_15"
+                android:text="@string/edit_insurance"
+                android:textColor="@color/white"
+                android:textSize="@dimen/Text_size_30" />
+
+            <app.mediczy_com.utility.TextViewFont
+                android:id="@+id/tv_actionBar_insurance_list"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/Margin_15"
+                android:text="@string/insurance_list"
+                android:textColor="@color/white"
+                android:textSize="@dimen/Text_size_30" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+</RelativeLayout>

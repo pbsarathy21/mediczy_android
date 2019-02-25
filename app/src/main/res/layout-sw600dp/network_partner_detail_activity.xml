@@ -1,0 +1,135 @@
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/collapsing_toolbar_network_partner_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:contentScrim="@color/colorPrimary"
+            app:expandedTitleMarginEnd="16dp"
+            app:expandedTitleMarginStart="48dp"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fitsSystemWindows="true"
+                app:layout_collapseMode="parallax">
+
+                <include
+                    android:id="@+id/inc_gallery_network_partner_detail"
+                    layout="@layout/network_partner_detail_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </FrameLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize" />
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar_network_partner_detail"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_gravity="top"
+                android:elevation="@dimen/elevation"
+                app:layout_collapseMode="pin">
+
+                <RelativeLayout
+                    android:id="@+id/rl_toolbar_np_chat"
+                    android:layout_width="84dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerInParent="true"
+                    android:layout_gravity="right|top"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="15dp"
+                    android:elevation="@dimen/elevation"
+                    android:background="@color/colorPrimaryDark"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/textview_np_chat"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginRight="10dp"
+                        android:gravity="center"
+                        android:text="MESSAGES"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/Text_size_12"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.Toolbar>
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/ns_scroll_view_toolbar_network_partner_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#f1f5f8"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <RelativeLayout
+            android:id="@+id/rlCollapseScroll_network_partner_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white">
+
+            <include
+                android:id="@+id/include_network_partner_detail"
+                layout="@layout/network_partner_detail_top"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp" />
+
+            <include
+                android:id="@+id/include_network_partner_detail_1"
+                layout="@layout/view_detail_full_data"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_below="@+id/include_network_partner_detail"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp" />
+
+        </RelativeLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="20dp"
+        android:visibility="gone">
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fabBtn_network_partner_call"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:paddingBottom="40dp"
+            android:elevation="@dimen/elevation"
+            android:src="@android:drawable/ic_menu_call"
+            app:backgroundTint="@color/red"
+            app:borderWidth="0dp"
+            app:fabSize="normal" />
+    </RelativeLayout>
+
+</android.support.design.widget.CoordinatorLayout>

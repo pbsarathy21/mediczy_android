@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:id="@+id/logo_top11"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/logo_top1"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:background="@color/color_1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textview1_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/Margin_100"
+                android:layout_marginRight="@dimen/Margin_5"
+                android:layout_marginTop="@dimen/Margin_30"
+                android:gravity="left"
+                android:maxLines="1"
+                android:text="Prithivi"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imageView_logo_top_photo"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_marginBottom="@dimen/Margin_10"
+            android:layout_marginLeft="@dimen/Margin_20"
+            android:layout_marginTop="-44dp"
+            android:contentDescription="@string/description"
+            android:src="@drawable/no_image_1"
+            app:civ_border="true"
+            app:civ_border_width="2dp"
+            app:civ_selectorStrokeWidth="2dp"
+            app:civ_border_color="@color/black"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/tv_logo_top_photo1"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_marginBottom="@dimen/Margin_10"
+            android:layout_marginLeft="@dimen/Margin_20"
+            android:layout_marginTop="-44dp"
+            android:background="@drawable/circle_profile_txt"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="p"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:visibility="visible"/>
+
+    </LinearLayout>
+</RelativeLayout>

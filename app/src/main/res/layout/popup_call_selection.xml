@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="@dimen/Margin_15"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+
+        <Button
+            android:id="@+id/button_popup_phone_call"
+            android:layout_width="150dp"
+            android:layout_height="45dp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/btn_border_app_color"
+            android:text="PHONE CALL"
+            android:textColor="@color/white"
+            android:textSize="@dimen/Text_size_17" />
+
+
+        <TextView
+            android:id="@+id/textView_button_popup_phone_call_empty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/button_popup_phone_call"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/Margin_10"
+            android:text="OR"
+            android:textStyle="bold"
+            android:textSize="@dimen/Text_size_18" />
+
+
+        <Button
+            android:id="@+id/button_popup_video_call"
+            android:layout_width="150dp"
+            android:layout_height="45dp"
+            android:layout_below="@+id/textView_button_popup_phone_call_empty"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/Margin_10"
+            android:background="@drawable/btn_border_blue"
+            android:text="VIDEO CALL"
+            android:textColor="@color/white"
+            android:textSize="@dimen/Text_size_17" />
+
+    </RelativeLayout>
+
+</LinearLayout>

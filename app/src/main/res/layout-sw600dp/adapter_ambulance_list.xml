@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_relative_layout_ambulance_adapter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="@dimen/Margin_5"
+        android:layout_marginRight="@dimen/Margin_5"
+        android:layout_marginBottom="@dimen/Margin_5"
+        android:background="@color/white"
+        card_view:cardCornerRadius="3dp"
+        card_view:cardElevation="@dimen/elevation">
+
+        <RelativeLayout
+            android:id="@+id/relative_view_ambulance_adapter_all"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true">
+
+            <RelativeLayout
+                android:id="@+id/relative_view_ambulance_adapter"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true">
+
+                <ImageView
+                    android:id="@+id/imageView1_vd_full_data_ambulance"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/gps" />
+
+                <TextView
+                    android:id="@+id/textview_vd_ambulance_km"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/imageView1_vd_full_data_ambulance"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center"
+                    android:text="20 Km"
+                    android:textColor="@color/gray"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relative_view_ambulance_adapter_main"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/relative_view_ambulance_adapter">
+
+                <ImageView
+                    android:id="@+id/imageView1_vd_full_data_ambulance_call"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/calls" />
+
+                <TextView
+                    android:id="@+id/textview_vd_ambulance_hospital_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginTop="10dp"
+                    android:text="Bharadwaj Hospital"
+                    android:textColor="@color/color_1"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    android:layout_alignRight="@+id/textview_vd_ambulance_hospital_address" />
+
+                <TextView
+                    android:id="@+id/textview_vd_ambulance_hospital_address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginTop="5dp"
+                    android:layout_below="@+id/textview_vd_ambulance_hospital_name"
+                    android:text="Muthu sami mudali street sainathapuram, vellore-1"
+                    android:textColor="@color/gray"
+                    android:textSize="15sp"
+                    android:layout_toLeftOf="@+id/imageView1_vd_full_data_ambulance_call" />
+
+                <TextView
+                    android:id="@+id/textview_vd_ambulance_hospital_offer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_below="@+id/textview_vd_ambulance_hospital_address"
+                    android:text="vellore-1"
+                    android:textColor="@color/gray"
+                    android:textSize="14sp"
+                    android:layout_toLeftOf="@+id/imageView1_vd_full_data_ambulance_call" />
+
+            </RelativeLayout>
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+
+</RelativeLayout>

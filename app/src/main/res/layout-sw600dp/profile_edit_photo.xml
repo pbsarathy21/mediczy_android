@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <app:android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_profile_edit_photo"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:theme="@style/AppTheme_ToolBar"
+        android:elevation="@dimen/elevation"/>
+
+    <GridView
+        android:id="@+id/gridView_view_categry_edit_photo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:listSelector="@null"
+        android:horizontalSpacing="2dp"
+        android:stretchMode="columnWidth"
+        android:numColumns="2"
+        android:verticalSpacing="2dp" />
+
+
+</LinearLayout>

@@ -1,0 +1,620 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <RelativeLayout
+            android:id="@+id/rl_vd_logo_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white">
+
+            <app.mediczy_com.utility.CircularImageView
+                android:id="@+id/imageView_vd_doctor_photo_edit"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:background="@color/white"
+                android:contentDescription="@string/description"
+                android:src="@drawable/no_image_plain"
+                app:civ_border="true"
+                app:civ_borderColor="@color/blue_1"
+                app:civ_borderWidth="3dp"
+                app:civ_selector="false"
+                app:civ_selectorStrokeWidth="3dp"
+                app:civ_shadow="false" />
+
+
+            <RelativeLayout
+                android:id="@+id/rl_vd_logo_doctor_name_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/imageView_vd_doctor_photo_edit"
+                android:layout_marginTop="12dp">
+
+                <EditText
+                    android:id="@+id/textview_vd_logo_doctor_name_edit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="75dp"
+                    android:gravity="center"
+                    android:hint="Enter your first name here..."
+                    android:maxLines="1"
+                    android:text=""
+                    android:textColor="@color/gray"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/imageView1_vd_full_data_edu_edit_icon_name"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="12dp"
+                    android:src="@drawable/edit"
+                    android:visibility="gone" />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/rl_vd_logo_doctor_name_edit_last_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rl_vd_logo_doctor_name_edit"
+                android:layout_marginTop="12dp">
+
+                <EditText
+                    android:id="@+id/textview_vd_logo_doctor_name_edit_last_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="75dp"
+                    android:gravity="center"
+                    android:hint="Enter your last name here..."
+                    android:maxLines="1"
+                    android:text=""
+                    android:textColor="@color/gray"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/imageView1_vd_full_data_edu_edit_icon_last_name"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="12dp"
+                    android:src="@drawable/edit"
+                    android:visibility="gone" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/textview_vd_logo_educa_edit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rl_vd_logo_doctor_name_edit_last_name"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="3dp"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text=""
+                android:textColor="@color/gray_light"
+                android:textSize="17sp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_vd_full_data_edu_edit_empty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rl_vd_logo_edit"
+            android:layout_marginTop="30dp"
+            android:background="@color/white">
+
+            <RelativeLayout
+                android:id="@+id/rl_vd_full_data_edu_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <app.mediczy_com.utility.TextViewFont
+                    android:id="@+id/imageView1_vd_full_data_edu_edit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="15dp"
+                    android:textColor="@color/black"
+                    android:text="@string/education"
+                    android:textSize="@dimen/Text_size_30" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_vd_full_data_text_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="6dp"
+                    android:layout_toRightOf="@+id/imageView1_vd_full_data_edu_edit">
+
+                    <TextView
+                        android:id="@+id/textview_vd_full_data_edu_edit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginRight="10dp"
+                        android:layout_toLeftOf="@+id/imageView1_vd_full_data_edu_edit_icon"
+                        android:text="Education"
+                        android:textSize="18sp" />
+
+                    <EditText
+                        android:id="@+id/ed_vd_full_data_edu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/textview_vd_full_data_edu_edit"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="8dp"
+                        android:hint="Enter your education here..."
+                        android:text=""
+                        android:textColor="@color/gray"
+                        android:textSize="16sp" />
+
+
+                    <ImageView
+                        android:id="@+id/imageView1_vd_full_data_edu_edit_icon"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="12dp"
+                        android:layout_marginTop="2dp"
+                        android:src="@drawable/edit"
+                        android:visibility="gone" />
+
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_vd_full_data_edu_degree_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rl_vd_full_data_edu_edit"
+                android:layout_marginTop="25dp">
+
+                <RelativeLayout
+                    android:id="@+id/rl_vd_full_data_text_degree_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="6dp"
+                    android:layout_toRightOf="@+id/imageView1_vd_full_data_edu_degree_edit">
+
+                    <TextView
+                        android:id="@+id/textview_vd_full_data_edu_degree_edit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginRight="10dp"
+                        android:hint="Experience"
+                        android:inputType="numberDecimal"
+                        android:text=""
+                        android:textSize="18sp" />
+
+                    <EditText
+                        android:id="@+id/ed_vd_full_data_edu_degree_edit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/textview_vd_full_data_edu_degree_edit"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="8dp"
+                        android:hint="Enter your exp here..."
+                        android:inputType="number"
+                        android:text=""
+                        android:textColor="@color/gray"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/textview_vd_full_data_edu_edit_exp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@+id/ed_vd_full_data_edu_degree_edit"
+                        android:layout_marginRight="10dp"
+                        android:layout_toRightOf="@+id/ed_vd_full_data_edu_degree_edit"
+                        android:text="Year Experience"
+                        android:textSize="@dimen/Text_size_14" />
+
+
+                </RelativeLayout>
+
+
+                <app.mediczy_com.utility.TextViewFont
+                    android:id="@+id/imageView1_vd_full_data_edu_degree_edit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="15dp"
+                    android:textColor="@color/black"
+                    android:text="@string/education"
+                    android:textSize="@dimen/Text_size_30" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_vd_full_data_loc_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rl_vd_full_data_edu_degree_edit"
+                android:layout_marginTop="25dp">
+
+                <app.mediczy_com.utility.TextViewFont
+                    android:id="@+id/imageView1_vd_full_data_loc_edit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="15dp"
+                    android:textColor="@color/black"
+                    android:text="@string/location"
+                    android:textSize="@dimen/Text_size_30" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_vd_full_data_location_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:layout_toRightOf="@+id/imageView1_vd_full_data_loc_edit">
+
+                    <TextView
+                        android:id="@+id/textview_vd_full_data_loc_edit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginRight="9dp"
+                        android:layout_toLeftOf="@+id/imageView1_vd_full_data_loc_edit_icon"
+                        android:hint="Address"
+                        android:text=""
+                        android:textSize="18sp" />
+
+                    <EditText
+                        android:id="@+id/ed_vd_full_data_loc_edit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/textview_vd_full_data_loc_edit"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="8dp"
+                        android:hint="Enter your exp here..."
+                        android:inputType="textMultiLine"
+                        android:text=""
+                        android:textColor="@color/gray"
+                        android:textSize="16sp" />
+
+
+                    <ImageView
+                        android:id="@+id/imageView1_vd_full_data_loc_edit_icon"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="12dp"
+                        android:src="@drawable/edit"
+                        android:visibility="gone" />
+
+                    <ImageView
+                        android:id="@+id/imageView1_vd_full_data_edu_degree_edit_icon"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="12dp"
+                        android:src="@drawable/edit"
+                        android:visibility="gone" />
+
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_vd_full_data_pri_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rl_vd_full_data_loc_edit"
+                android:layout_marginTop="25dp">
+
+                <app.mediczy_com.utility.TextViewFont
+                    android:id="@+id/imageView1_vd_full_data_pri_edit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="15dp"
+                    android:textColor="@color/black"
+                    android:text="@string/fees"
+                    android:textSize="@dimen/Text_size_30" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_vd_full_data_price_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="6dp"
+                    android:layout_toRightOf="@+id/imageView1_vd_full_data_pri_edit">
+
+                    <TextView
+                        android:id="@+id/textview_vd_full_data_price_edit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="1dp"
+                        android:layout_toLeftOf="@+id/imageView1_vd_full_data_pri_edit_icon"
+                        android:hint="Fee"
+                        android:inputType="number"
+                        android:text=""
+                        android:textSize="18sp" />
+
+                    <EditText
+                        android:id="@+id/ed_vd_full_data_price_edit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/textview_vd_full_data_price_edit"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="8dp"
+                        android:hint="Enter your price here..."
+                        android:inputType="number"
+                        android:text=""
+                        android:textColor="@color/gray"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/ed_vd_full_data_price_edit_inr"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@+id/ed_vd_full_data_price_edit"
+                        android:layout_marginRight="10dp"
+                        android:layout_toRightOf="@+id/ed_vd_full_data_price_edit"
+                        android:text="INR"
+                        android:textSize="@dimen/Text_size_14" />
+
+                    <ImageView
+                        android:id="@+id/imageView1_vd_full_data_pri_edit_icon"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="12dp"
+                        android:src="@drawable/edit"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/textview_vd_full_data_edu_edit_empty"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:layout_below="@+id/textview_vd_full_data_price_edit" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/rl_vd_full_data_pri_service"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rl_vd_full_data_pri_edit"
+                android:layout_marginTop="25dp">
+
+                <app.mediczy_com.utility.TextViewFont
+                    android:id="@+id/imageView1_vd_full_data_pri_service"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="15dp"
+                    android:textColor="@color/black"
+                    android:text="@string/Service_Specialization"
+                    android:textSize="@dimen/Text_size_30" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_vd_full_data_price_service"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="6dp"
+                    android:layout_toRightOf="@+id/imageView1_vd_full_data_pri_service">
+
+                    <TextView
+                        android:id="@+id/textview_vd_full_data_price_service"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="1dp"
+                        android:layout_toLeftOf="@+id/imageView1_vd_full_data_pri_edit_service"
+                        android:hint="Service and Specialization"
+                        android:text=""
+                        android:textSize="18sp" />
+
+                    <EditText
+                        android:id="@+id/ed_vd_full_data_price_service"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/textview_vd_full_data_price_service"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="8dp"
+                        android:hint="Enter your service and specialization here..."
+                        android:inputType="text"
+                        android:text=""
+                        android:textColor="@color/gray"
+                        android:textSize="16sp" />
+
+                    <ImageView
+                        android:id="@+id/imageView1_vd_full_data_pri_edit_service"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="12dp"
+                        android:src="@drawable/edit"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/textview_vd_full_data_edu_edit_service"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:layout_below="@+id/textview_vd_full_data_price_service" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_vd_full_data_pri_lang_kn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rl_vd_full_data_pri_service"
+                android:layout_marginTop="25dp">
+
+                <app.mediczy_com.utility.TextViewFont
+                    android:id="@+id/imageView1_vd_full_data_lang_kn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="15dp"
+                    android:textColor="@color/black"
+                    android:text="@string/Language_Known"
+                    android:textSize="@dimen/Text_size_30" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_vd_full_data_price_lang_kn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="6dp"
+                    android:layout_toRightOf="@+id/imageView1_vd_full_data_lang_kn">
+
+                    <TextView
+                        android:id="@+id/textview_vd_full_data_lang_kn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="1dp"
+                        android:layout_toLeftOf="@+id/imageView1_vd_full_data_lang_kn1"
+                        android:hint="Language Known"
+                        android:text=""
+                        android:textSize="18sp" />
+
+                    <EditText
+                        android:id="@+id/ed_vd_full_data_lang_kn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/textview_vd_full_data_lang_kn"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="8dp"
+                        android:hint="Enter your language here..."
+                        android:inputType="text"
+                        android:text=""
+                        android:textColor="@color/gray"
+                        android:textSize="16sp" />
+
+                    <ImageView
+                        android:id="@+id/imageView1_vd_full_data_lang_kn1"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="12dp"
+                        android:src="@drawable/edit"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/textview_vd_full_data_edu_lang_kn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:layout_below="@+id/textview_vd_full_data_lang_kn" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/rl_vd_full_data_rg_licence"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rl_vd_full_data_pri_lang_kn"
+                android:layout_marginTop="25dp">
+
+                <app.mediczy_com.utility.TextViewFont
+                    android:id="@+id/imageView1_vd_full_data_rg_licence"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="15dp"
+                    android:textColor="@color/black"
+                    android:text="@string/License"
+                    android:textSize="@dimen/Text_size_30" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_vd_full_data_rg_licence1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="6dp"
+                    android:layout_toRightOf="@+id/imageView1_vd_full_data_rg_licence">
+
+                    <TextView
+                        android:id="@+id/textview_vd_full_data_rg_licence"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="1dp"
+                        android:layout_toLeftOf="@+id/imageView1_vd_full_data_rg_licence1"
+                        android:hint="Registration License"
+                        android:text=""
+                        android:textSize="18sp" />
+
+                    <EditText
+                        android:id="@+id/ed_vd_full_data_rg_licence"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/textview_vd_full_data_rg_licence"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="8dp"
+                        android:hint="Enter your licence here..."
+                        android:inputType="text"
+                        android:text=""
+                        android:textColor="@color/gray"
+                        android:textSize="16sp" />
+
+                    <ImageView
+                        android:id="@+id/imageView1_vd_full_data_rg_licence1"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="12dp"
+                        android:src="@drawable/edit"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/textview_vd_full_data_edu_rg_licence"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:layout_below="@+id/textview_vd_full_data_rg_licence" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+
+            <Button
+                android:id="@+id/saved_edit_pro"
+                android:layout_width="100dp"
+                android:layout_height="45dp"
+                android:layout_below="@+id/rl_vd_full_data_rg_licence"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="@dimen/Margin_20"
+                android:background="@drawable/btn_border_app_color"
+                android:text="Save"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+</android.support.v7.widget.CardView>

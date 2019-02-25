@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/white">
+
+        <ScrollView
+            android:id="@+id/scrollView_terms"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:scrollbars="none">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true">
+
+                <TextView
+                    android:id="@+id/textView_terms_heading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="20dp"
+                    android:text="Terms of Service and Privacy Policy"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:id="@+id/view_terms_condition"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/textView_terms_heading"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@android:color/darker_gray" />
+
+                <TextView
+                    android:id="@+id/textView_terms_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/view_terms_condition"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="The following terms of service constitute a necessary legal agreement (the “Agreement”) between You and Mediczy. (Hereinafter referred to as Mediczy (which expression shall include its successors and assigns), setting forth the terms and conditions (“Terms”) under which the Mediczy (the “Application”) and any related services will be licensed to You by Mediczy.By access, downloading, installing the Application, You represent to Mediczy that you are aware to enter into a contract (i.e. You a major according to applicable law, of sound mind and not disqualified from entering into a contract under the applicable law) and You have read this Agreement, understand it and agree to be clear by its Terms. Please review the Agreement carefully before accessing, downloading and installation.
+More information about the Terms of Service and Privacy Policy for Mediczy Application is available on Mediczy’s website www.Mediczy.com (“Site”)."
+                    android:textSize="16sp" />
+
+            </RelativeLayout>
+        </ScrollView>
+    </RelativeLayout>
+</RelativeLayout>

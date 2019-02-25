@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="bottom"
+    android:layout_marginBottom="@dimen/_2sdp"
+    android:background="@color/white"
+    android:gravity="bottom"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:gravity="center"
+        android:text="ncjdnjk"
+        android:textColor="@color/chat_date"
+        android:textSize="@dimen/_13sdp"
+        android:textStyle="bold"
+        android:visibility="gone" />
+
+
+    <LinearLayout
+        android:id="@+id/linear_all"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/linear_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|bottom"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:gravity="right|bottom"
+                android:orientation="horizontal"
+                android:visibility="visible">
+
+
+                <TextView
+                    android:id="@+id/text_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Click Yes Button"
+                    android:textAllCaps="true"
+                    android:textColor="@color/detail_head"
+                    android:textSize="@dimen/_8sdp" />
+
+
+            </LinearLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:background="@drawable/chat_bot_cb_right"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:id="@+id/linear_mess"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:gravity="right"
+                    android:padding="@dimen/_5sdp"
+                    android:visibility="visible">
+
+                    <TextView
+                        android:id="@+id/replyMsg_Txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_4sdp"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:gravity="center"
+                        android:text="Hello EveryOne"
+                        android:textColor="@color/chat"
+                        android:textSize="@dimen/_10sdp" />
+
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+            <!--    <ImageView
+                    android:id="@+id/Img_up"
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:layout_gravity="right|bottom"
+                    android:layout_marginLeft="-6dp"
+                    android:background="@drawable/ccc_r"
+                    android:visibility="visible" />
+    -->
+
+            <ImageView
+                android:id="@+id/Img_up"
+                android:layout_width="@dimen/_11sdp"
+                android:layout_height="@dimen/_7sdp"
+                android:layout_gravity="left"
+                android:layout_marginRight="-4dp"
+                android:background="@drawable/lo"
+                android:gravity="right"
+                android:visibility="visible" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:id="@+id/linear_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+
+            <RelativeLayout
+                android:id="@+id/vkv"
+                android:layout_width="@dimen/_38sdp"
+                android:layout_height="@dimen/_58sdp">
+
+                <ImageView
+                    android:id="@+id/rob"
+                    android:layout_width="@dimen/_35sdp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_alignParentTop="true"
+                    android:layout_margin="@dimen/_1sdp"
+                    android:clickable="true" />
+
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_toRightOf="@+id/vkv"
+                android:orientation="horizontal">
+
+
+                <ImageView
+                    android:id="@+id/Img_down"
+                    android:layout_width="@dimen/_13sdp"
+                    android:layout_height="@dimen/_13sdp"
+                    android:layout_marginRight="-5dp"
+                    android:background="@drawable/edd"
+                    android:visibility="visible" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.2"
+                    android:background="@drawable/chat_bot_cb_left"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+
+                    <LinearLayout
+                        android:id="@+id/linear_mess_left"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/_5sdp"
+                        android:visibility="visible">
+
+                        <TextView
+                            android:id="@+id/replyMsg_Txt_left"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/_4sdp"
+                            android:layout_marginTop="@dimen/_4sdp"
+                            android:gravity="center|left"
+                            android:text="Click Yes Button"
+                            android:textColor="@color/chat"
+                            android:textSize="@dimen/_10sdp" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linear_date_left"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right|bottom"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:layout_weight="0.3"
+                    android:gravity="right|bottom"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
+
+                    <TextView
+                        android:id="@+id/text_time_left"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="bottom"
+                        android:text="Click Yes Button"
+                        android:textAllCaps="true"
+                        android:textColor="@color/detail_head"
+                        android:textSize="@dimen/_8sdp" />
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/line_rob"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+
+        <RelativeLayout
+            android:id="@+id/linear_left_rob"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+
+            <RelativeLayout
+                android:id="@+id/vkv_rob"
+                android:layout_width="@dimen/_38sdp"
+                android:layout_height="@dimen/_58sdp">
+
+                <ImageView
+                    android:id="@+id/rob_rob"
+                    android:layout_width="@dimen/_35sdp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_alignParentTop="true"
+                    android:layout_margin="@dimen/_1sdp"
+                    android:clickable="true" />
+
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_toRightOf="@+id/vkv_rob"
+                android:orientation="horizontal">
+
+
+                <ImageView
+                    android:id="@+id/Img_down_rob"
+                    android:layout_width="@dimen/_13sdp"
+                    android:layout_height="@dimen/_13sdp"
+                    android:layout_marginRight="-5dp"
+                    android:background="@drawable/edd"
+                    android:visibility="visible" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.2"
+                    android:background="@drawable/chat_bot_cb_left"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+
+                    <LinearLayout
+                        android:id="@+id/linear_mess_left_rob"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="@dimen/_5sdp"
+                        android:visibility="visible">
+
+                        <TextView
+                            android:id="@+id/replyMsg_Txt_left_rob"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/_4sdp"
+                            android:layout_marginTop="@dimen/_4sdp"
+                            android:gravity="center|left"
+                            android:text="Click Yes Button"
+                            android:textColor="@color/chat"
+                            android:textSize="@dimen/_10sdp"
+                            android:visibility="gone" />
+
+                        <com.github.silvestrpredko.dotprogressbar.DotProgressBar
+                            android:id="@+id/dot_progress_bar"
+                            android:layout_width="50dp"
+                            android:layout_height="11dp"
+                            android:layout_marginBottom="@dimen/_4sdp"
+                            android:layout_marginTop="@dimen/_4sdp"
+                            custom:amount="5"
+                            custom:animationDirection="left"
+                            custom:duration="@android:integer/config_mediumAnimTime"
+                            custom:endColor="@color/light_blue_A400"
+                            custom:startColor="@color/light_blue_A700" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linear_rob"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right|bottom"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:layout_weight="0.3"
+                    android:gravity="right|bottom"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
+
+                    <TextView
+                        android:id="@+id/text_time_left_rob"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="bottom"
+                        android:text=""
+                        android:textAllCaps="true"
+                        android:textColor="@color/detail_head"
+                        android:textSize="@dimen/_8sdp" />
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/relative_register_first_al"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="2dp">
+
+        <RelativeLayout
+            android:id="@+id/relative_register_first_lst_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/editText_register_first_name_lay"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_toLeftOf="@+id/textView_register_app_empty"
+                android:layout_toStartOf="@+id/textView_register_app_empty">
+
+                <EditText
+                    android:id="@+id/editText_register_first_name"
+                    style="@style/CustomEditText_Register"
+                    android:ems="10"
+                    android:hint="@string/ed_firstname"
+                    android:inputType="textCapWords" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <TextView
+                android:id="@+id/textView_register_app_empty"
+                android:layout_width="5dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="" />
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/editText_register_last_name_lay"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_toEndOf="@+id/textView_register_app_empty"
+                android:layout_toRightOf="@+id/textView_register_app_empty">
+
+                <EditText
+                    android:id="@+id/editText_register_last_name"
+                    style="@style/CustomEditText_Register"
+                    android:ems="10"
+                    android:hint="@string/ed_lastname"
+                    android:inputType="textCapWords" />
+            </android.support.design.widget.TextInputLayout>
+        </RelativeLayout>
+
+        <Spinner
+            android:id="@+id/spinner_register_country_name"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/relative_register_first_lst_name"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="16dp"
+            android:ems="10"
+            android:hint="First Name" />
+
+
+        <RelativeLayout
+            android:id="@+id/relative_register_mobile_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/spinner_register_country_name"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="3dp">
+
+            <TextView
+                android:id="@+id/textView_register_country_code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="27dp"
+                android:text="+91"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+            <Spinner
+                android:id="@+id/spinner_register_country_code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="27dp"
+                android:ems="10"
+                android:hint=""
+                android:visibility="gone" />
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/editText_register_mobile_number_lay"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_toEndOf="@+id/spinner_register_country_code"
+                android:layout_toRightOf="@+id/spinner_register_country_code">
+
+                <EditText
+                    android:id="@+id/editText_register_mobile_number"
+                    style="@style/CustomEditText_Register"
+                    android:ems="10"
+                    android:hint="@string/ed_number"
+                    android:inputType="phone"
+                    android:maxLength="10" />
+            </android.support.design.widget.TextInputLayout>
+        </RelativeLayout>
+
+        <Spinner
+            android:id="@+id/spinner_register_gender"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/relative_register_mobile_number"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="12dp"
+            android:ems="10"
+            android:hint="First Name" />
+
+        <RelativeLayout
+            android:id="@+id/relative_register_dob"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/spinner_register_gender"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="22dp">
+
+            <Spinner
+                android:id="@+id/spinner_register_dob_month"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginRight="5dp"
+                android:layout_toLeftOf="@+id/spinner_register_dob_day"
+                android:layout_toStartOf="@+id/spinner_register_dob_day"
+                android:ems="10"
+                android:hint="First Name" />
+
+            <Spinner
+                android:id="@+id/spinner_register_dob_day"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:ems="10"
+                android:hint="First Name" />
+
+            <Spinner
+                android:id="@+id/spinner_register_dob_year"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="5dp"
+                android:layout_toEndOf="@+id/spinner_register_dob_day"
+                android:layout_toRightOf="@+id/spinner_register_dob_day"
+                android:ems="10"
+                android:hint="First Name" />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/relative_register_ref_code"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/relative_register_dob"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="22dp">
+
+            <TextView
+                android:id="@+id/textView_register_ref_code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_toRightOf="@+id/checkBox_register_ref_code"
+                android:gravity="center"
+                android:text="Do you have Doctor Reference Code?"
+                android:textSize="16sp" />
+
+            <CheckBox
+                android:id="@+id/checkBox_register_ref_code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:checked="false" />
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/editText_register_ref_code"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/checkBox_register_ref_code"
+                android:layout_marginLeft="10dp">
+
+                <EditText
+                    android:id="@+id/editText_register__ref_code1"
+                    style="@style/CustomEditText_Register"
+                    android:ems="10"
+                    android:hint="@string/ed_ref_code"
+                    android:inputType="text" />
+            </android.support.design.widget.TextInputLayout>
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/relative_register_terms"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/relative_register_ref_code"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="22dp">
+
+            <TextView
+                android:id="@+id/textView_register_terms_condition"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/checkBox_register_terms"
+                android:layout_marginTop="6dp"
+                android:gravity="center"
+                android:text="I agree the Terms and Conditions"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:id="@+id/checkBox_register_terms"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:checked="false" />
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/button_register_continue"
+            android:layout_width="150dp"
+            android:layout_height="42dp"
+            android:layout_below="@+id/relative_register_terms"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="7dp"
+            android:background="@drawable/btn_border_blue"
+            android:text="CONTINUE"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/button_register_continue_empty"
+            android:layout_width="wrap_content"
+            android:layout_height="12dp"
+            android:layout_below="@+id/button_register_continue"
+            android:layout_centerHorizontal="true" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

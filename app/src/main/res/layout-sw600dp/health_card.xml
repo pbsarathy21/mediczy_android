@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/health_card_bg">
+
+    <include
+        android:id="@+id/tool_bar_health_card"
+        layout="@layout/toolbar_transparent"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+
+    <com.vinaygaba.creditcardview.CreditCardView
+        android:id="@+id/health_card"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/Margin_100"
+        android:layout_marginRight="@dimen/Margin_100"
+        android:layout_marginTop="@dimen/Margin_60"
+        android:layout_marginBottom="@dimen/Margin_60"
+        app:cardName="John Doe"
+        app:cardNameTextColor="#cccccc"
+        app:cardNumberFormat="all_digits"
+        app:cardNumberTextColor="#cccccc"
+        app:expiryDate="11/15"
+        app:expiryDateTextColor="#cccccc"
+        app:hintTextColor="#ffffff"
+        app:isEditable="false"
+        app:isCardNumberEditable="false"
+        app:putChip="false"
+        app:type="mastercard"
+        app:validTillTextColor="#cccccc"
+        app:isFlippable="false"/>
+
+
+<!--    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/Margin_20"
+        android:visibility="gone"
+        android:background="@drawable/health_card_img">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:scrollbars="none">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true">
+
+                <TextView
+                    android:id="@+id/textView_health_card_app_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginTop="30dp"
+                    android:text="@string/app_name"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/Text_size_28"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/textView_health_benefit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/textView_health_card_app_name"
+                    android:layout_alignStart="@+id/textView_health_card_app_name"
+                    android:layout_below="@+id/textView_health_card_app_name"
+                    android:layout_marginTop="15dp"
+                    android:text="@string/health_card_benefits"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/Text_size_26"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textView_health_valid_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView_health_benefit"
+                    android:layout_marginLeft="-40dp"
+                    android:layout_marginTop="30dp"
+                    android:rotation="-90"
+                    android:text="@string/health_card_valid_text"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/Text_size_14"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textView_health_app_md"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/textView_health_card_app_name"
+                    android:layout_alignStart="@+id/textView_health_card_app_name"
+                    android:layout_below="@+id/textView_health_benefit"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/health_card_app_text"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/Text_size_22"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textView_health_app_card_num"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView_health_benefit"
+                    android:layout_marginLeft="@dimen/Margin_8"
+                    android:layout_marginTop="20dp"
+                    android:layout_toRightOf="@+id/textView_health_app_md"
+                    android:maxLines="1"
+                    android:text="123456789"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/Text_size_22" />
+
+                <TextView
+                    android:id="@+id/textView_health_app_valid_up"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/textView_health_card_app_name"
+                    android:layout_alignStart="@+id/textView_health_card_app_name"
+                    android:layout_below="@+id/textView_health_app_card_num"
+                    android:layout_marginTop="@dimen/Margin_60"
+                    android:text="@string/health_card_app_valid_up"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/Text_size_16" />
+
+                <TextView
+                    android:id="@+id/textView_health_app_valid_up_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView_health_app_card_num"
+                    android:layout_marginLeft="@dimen/Margin_20"
+                    android:layout_marginTop="@dimen/Margin_60"
+                    android:layout_toRightOf="@+id/textView_health_app_valid_up"
+                    android:maxLines="1"
+                    android:text="03/18"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/Text_size_16"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/textView_health_app_valid_up_year"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/health_card_app_year"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/Text_size_16"
+                    android:textStyle="bold"
+                    android:layout_below="@+id/textView_health_valid_text"
+                    android:layout_alignLeft="@+id/textView_health_app_valid_up_value"
+                    android:layout_marginTop="20dp" />
+
+            </RelativeLayout>
+        </ScrollView>
+    </RelativeLayout>-->
+
+</RelativeLayout>

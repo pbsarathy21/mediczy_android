@@ -1,0 +1,808 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/tool_bar"
+        layout="@layout/toolbar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+
+    <ScrollView
+        android:id="@+id/scrool"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        android:layout_below="@+id/tool_bar"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_relative_layout_register"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="5dp"
+            android:background="#FFFFFF"
+            card_view:cardCornerRadius="3dp"
+            card_view:cardElevation="14dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/header6_for_you_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible"
+                    card_view:cardCornerRadius="3dp"
+                    card_view:cardElevation="6dp">
+
+                    <RelativeLayout
+                        android:id="@+id/header6_for_you"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RelativeLayout
+                            android:id="@+id/header1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/maintext1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:layout_centerHorizontal="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginBottom="5dp"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="5dp"
+                                android:text="Is This for Clinic visit or online consult?"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <View
+                                android:id="@+id/vi1"
+                                android:layout_width="match_parent"
+                                android:layout_height="0.3dp"
+                                android:layout_below="@+id/maintext1"
+                                android:layout_marginLeft="15dp"
+                                android:layout_marginRight="15dp"
+                                android:layout_marginTop="10dp"
+                                android:background="@color/light_gray" />
+                        </RelativeLayout>
+
+
+                        <RelativeLayout
+                            android:id="@+id/header2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_below="@+id/header1"
+                            android:layout_marginTop="5dp">
+
+                            <RadioButton
+                                android:id="@+id/you"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="5dp" />
+
+                            <TextView
+                                android:id="@+id/you_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="10dp"
+                                android:layout_toRightOf="@+id/you"
+                                android:text="Online Consult"
+                                android:textSize="16sp"
+                                android:textStyle="normal" />
+
+                            <View
+                                android:id="@+id/vi2"
+                                android:layout_width="match_parent"
+                                android:layout_height="0.3dp"
+                                android:layout_below="@+id/you"
+                                android:layout_marginLeft="15dp"
+                                android:layout_marginRight="15dp"
+                                android:layout_marginTop="1dp"
+                                android:background="@color/light_gray" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/header3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/header2"
+                            android:layout_marginTop="5dp">
+
+                            <RadioButton
+                                android:id="@+id/someelse"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="5dp" />
+
+                            <TextView
+                                android:id="@+id/some"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="10dp"
+                                android:layout_toRightOf="@+id/someelse"
+                                android:text="Hospital Visit"
+                                android:textSize="16sp"
+                                android:textStyle="normal" />
+
+                            <View
+                                android:id="@+id/vi3"
+                                android:layout_width="match_parent"
+                                android:layout_height="0.3dp"
+                                android:layout_below="@+id/someelse"
+                                android:layout_marginLeft="15dp"
+                                android:layout_marginRight="15dp"
+                                android:layout_marginTop="1dp"
+                                android:background="@color/light_gray" />
+
+                        </RelativeLayout>
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/header6_desc_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/header6_for_you_card"
+                    android:layout_marginTop="5dp"
+                    android:visibility="visible"
+                    card_view:cardCornerRadius="3dp"
+                    card_view:cardElevation="6dp">
+
+                    <RelativeLayout
+                        android:id="@+id/header6_desc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RelativeLayout
+                            android:id="@+id/header4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/maintext2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginBottom="5dp"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="5dp"
+                                android:text="DESBRIE YOUR ISSUE IN DETAIL"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <View
+                                android:id="@+id/vi4"
+                                android:layout_width="match_parent"
+                                android:layout_height="0.3dp"
+                                android:layout_below="@+id/maintext2"
+                                android:layout_marginLeft="15dp"
+                                android:layout_marginRight="15dp"
+                                android:layout_marginTop="10dp"
+                                android:background="@color/light_gray" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/header5"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/header4">
+
+                            <EditText
+                                android:id="@+id/question"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="2dp"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:gravity="top|left"
+                                android:inputType="textEmailAddress|textMultiLine"
+                                android:lines="20"
+                                android:minLines="5"
+                                android:scrollHorizontally="false"
+                                android:scrollbars="vertical" />
+
+                            <View
+                                android:id="@+id/v20"
+                                android:layout_width="match_parent"
+                                android:layout_height="0.3dp"
+                                android:layout_below="@+id/question"
+                                android:layout_marginLeft="15dp"
+                                android:layout_marginRight="15dp"
+                                android:layout_marginTop="1dp"
+                                android:background="@color/light_gray" />
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/header_basic_info_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/header6_desc_card"
+                    android:layout_marginTop="5dp"
+                    android:visibility="visible"
+                    card_view:cardCornerRadius="3dp"
+                    card_view:cardElevation="6dp">
+
+                    <RelativeLayout
+                        android:id="@+id/header_basic_info"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp">
+
+                        <RelativeLayout
+                            android:id="@+id/header6"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/maintext5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_alignParentLeft="true"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="5dp"
+                                android:text="SHARE BASIC INFORMATION"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <View
+                                android:id="@+id/vi5"
+                                android:layout_width="match_parent"
+                                android:layout_height="0.3dp"
+                                android:layout_below="@+id/maintext5"
+                                android:layout_marginLeft="15dp"
+                                android:layout_marginRight="15dp"
+                                android:layout_marginTop="10dp"
+                                android:background="@color/light_gray" />
+                        </RelativeLayout>
+
+
+                        <RelativeLayout
+                            android:id="@+id/header7"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/header6">
+
+                            <!--<Spinner
+                                android:id="@+id/spinner_category"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginLeft="7dp"
+                                android:layout_marginTop="10dp"
+                                android:hint="Select the Category" />-->
+
+                            <TextView
+                                android:id="@+id/caterory_selected_head"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="10dp"
+                                android:text="Category Selected :"
+                                android:textSize="16sp"
+                                android:textStyle="normal" />
+
+                            <TextView
+                                android:id="@+id/caterory_selected"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_toRightOf="@+id/caterory_selected_head"
+                                android:layout_centerVertical="true"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp"
+                                android:maxLines="1"
+                                android:text=""
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                        </RelativeLayout>
+
+
+                        <RelativeLayout
+                            android:id="@+id/header9"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/header7"
+                            android:layout_marginTop="@dimen/Margin_5">
+
+                            <Spinner
+                                android:id="@+id/spinner_gender"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginLeft="7dp"
+                                android:layout_marginTop="10dp"
+                                android:hint="First Name" />
+
+                        </RelativeLayout>
+
+
+                        <RelativeLayout
+                            android:id="@+id/header10"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/header9"
+                            android:layout_marginTop="@dimen/Margin_5">
+
+                            <android.support.design.widget.TextInputLayout
+                                android:id="@+id/editText_layout2"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true">
+
+                                <EditText
+                                    android:id="@+id/editText_age"
+                                    style="@style/CustomEditText_Register"
+                                    android:ems="10"
+                                    android:hint="@string/ed_age"
+                                    android:inputType="number" />
+
+                            </android.support.design.widget.TextInputLayout>
+
+
+                        </RelativeLayout>
+
+
+                        <RelativeLayout
+                            android:id="@+id/header11"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/header10"
+                            android:layout_marginTop="@dimen/Margin_5">
+
+                            <android.support.design.widget.TextInputLayout
+                                android:id="@+id/editText_register_first_name_lay1"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true">
+
+                                <EditText
+                                    android:id="@+id/editText_weight"
+                                    style="@style/CustomEditText_Register"
+                                    android:ems="10"
+                                    android:hint="@string/ed_weight"
+                                    android:inputType="numberDecimal" />
+
+                            </android.support.design.widget.TextInputLayout>
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/header12"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/header11"
+                            android:layout_marginTop="@dimen/Margin_5">
+
+                            <android.support.design.widget.TextInputLayout
+                                android:id="@+id/editText_register_first_name_lay4"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true">
+
+                                <EditText
+                                    android:id="@+id/editText_height"
+                                    style="@style/CustomEditText_Register"
+                                    android:ems="10"
+                                    android:hint="@string/ed_height"
+                                    android:inputType="numberDecimal" />
+
+                            </android.support.design.widget.TextInputLayout>
+
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/header13"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/header12"
+                            android:layout_marginTop="@dimen/Margin_5">
+
+                            <android.support.design.widget.TextInputLayout
+                                android:id="@+id/editText_register_first_name_lay5"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true">
+
+                                <EditText
+                                    android:id="@+id/editText_city"
+                                    style="@style/CustomEditText_Register"
+                                    android:ems="10"
+                                    android:hint="@string/ed_city"
+                                    android:inputType="textCapWords" />
+
+                            </android.support.design.widget.TextInputLayout>
+
+                            <View
+                                android:id="@+id/vi6"
+                                android:layout_width="match_parent"
+                                android:layout_height="0.3dp"
+                                android:layout_below="@+id/editText_register_first_name_lay5"
+                                android:layout_marginLeft="15dp"
+                                android:layout_marginRight="15dp"
+                                android:layout_marginTop="1dp"
+                                android:background="@color/light_gray" />
+
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/patient_adtional_info_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/header_basic_info_card"
+                    android:layout_marginTop="5dp"
+                    card_view:cardCornerRadius="3dp"
+                    card_view:cardElevation="16dp">
+
+                    <RelativeLayout
+                        android:id="@+id/patient_adtional_info"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+
+                        <RelativeLayout
+                            android:id="@+id/header14"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/maintext7"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginBottom="5dp"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="5dp"
+                                android:text="ADDITIONAL INFORMATION"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <View
+                                android:id="@+id/vi8"
+                                android:layout_width="match_parent"
+                                android:layout_height="0.3dp"
+                                android:layout_below="@+id/maintext7"
+                                android:layout_marginLeft="15dp"
+                                android:layout_marginRight="15dp"
+                                android:layout_marginTop="10dp"
+                                android:background="@color/light_gray" />
+                        </RelativeLayout>
+
+
+                        <RelativeLayout
+                            android:id="@+id/header15"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/header14"
+                            android:layout_marginBottom="10dp">
+
+                            <TextView
+                                android:id="@+id/maintext9"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:layout_marginBottom="5dp"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="5dp"
+                                android:text="Do you have any previously diagnosed condition"
+                                android:textSize="14sp"
+                                android:textStyle="normal" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/header16"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/header15">
+
+                            <TextView
+                                android:id="@+id/textView_register_patient"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:layout_marginBottom="15dp"
+                                android:layout_marginRight="20dp"
+                                android:layout_toLeftOf="@+id/textView_register_empty"
+                                android:text="No"
+                                android:textSize="16sp"
+                                android:textStyle="normal" />
+
+                            <RadioButton
+                                android:id="@+id/radioButton_register_no"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:layout_marginBottom="15dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_toLeftOf="@+id/textView_register_patient"
+                                android:text="" />
+
+                            <View
+                                android:id="@+id/textView_register_empty"
+                                android:layout_width="0.5dp"
+                                android:layout_height="30dp"
+                                android:layout_centerHorizontal="true"
+                                android:layout_centerInParent="true"
+                                android:layout_marginBottom="15dp"
+                                android:layout_marginTop="1dp"
+                                android:background="@color/black" />
+
+                            <RadioButton
+                                android:id="@+id/radioButton_register_yes"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:layout_marginBottom="15dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_toRightOf="@+id/textView_register_empty"
+                                android:text="" />
+
+
+                            <TextView
+                                android:id="@+id/textView_register_doctor"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:layout_marginBottom="15dp"
+                                android:layout_toRightOf="@+id/radioButton_register_yes"
+                                android:text="Yes"
+                                android:textSize="16sp"
+                                android:textStyle="normal" />
+
+                            <View
+                                android:id="@+id/vi25"
+                                android:layout_width="match_parent"
+                                android:layout_height="0.3dp"
+                                android:layout_below="@+id/textView_register_empty"
+                                android:layout_marginBottom="7dp"
+                                android:layout_marginLeft="15dp"
+                                android:layout_marginRight="15dp"
+                                android:layout_marginTop="5dp"
+                                android:background="@color/light_gray" />
+
+                        </RelativeLayout>
+
+
+                        <RelativeLayout
+                            android:id="@+id/header17"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/header16"
+                            android:layout_marginBottom="10dp">
+
+                            <TextView
+                                android:id="@+id/maintext11"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:layout_marginBottom="5dp"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="5dp"
+                                android:text="Do you take any medications?"
+                                android:textSize="14sp"
+                                android:textStyle="normal" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/header19"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/header18"
+                            android:layout_marginBottom="10dp">
+
+                            <TextView
+                                android:id="@+id/maintext12"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:layout_marginBottom="5dp"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="5dp"
+                                android:text="Do you any allergies?"
+                                android:textSize="15sp"
+                                android:textStyle="normal" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/header20"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/header19"
+                            android:layout_marginBottom="5dp">
+
+                            <TextView
+                                android:id="@+id/textView_register_allergies"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:layout_marginRight="20dp"
+                                android:layout_toLeftOf="@+id/textView_register_empty2"
+                                android:text="No"
+                                android:textSize="16sp"
+                                android:textStyle="normal" />
+
+                            <RadioButton
+                                android:id="@+id/radioButton_allergy_no"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:layout_marginLeft="20dp"
+                                android:layout_toLeftOf="@+id/textView_register_allergies"
+                                android:text="" />
+
+                            <View
+                                android:id="@+id/textView_register_empty2"
+                                android:layout_width="0.5dp"
+                                android:layout_height="30dp"
+                                android:layout_centerHorizontal="true"
+                                android:layout_centerInParent="true"
+                                android:background="@color/black" />
+
+                            <RadioButton
+                                android:id="@+id/radioButton_allergy_yes"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:layout_marginLeft="20dp"
+                                android:layout_toRightOf="@+id/textView_register_empty2"
+                                android:text="" />
+
+
+                            <TextView
+                                android:id="@+id/textView_allergy_yes"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:layout_toRightOf="@+id/radioButton_allergy_yes"
+                                android:text="Yes"
+                                android:textSize="16sp"
+                                android:textStyle="normal" />
+
+
+                        </RelativeLayout>
+
+                        <Button
+                            android:id="@+id/submit_patient_from"
+                            android:layout_width="120dp"
+                            android:layout_height="42dp"
+                            android:layout_below="@+id/header20"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@color/color_1"
+                            android:text="Submit"
+                            android:textColor="@color/white" />
+
+
+                        <RelativeLayout
+                            android:id="@+id/header18"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_below="@+id/header17">
+
+                            <TextView
+                                android:id="@+id/textView_register_medication"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:layout_marginBottom="15dp"
+                                android:layout_marginRight="20dp"
+                                android:layout_toLeftOf="@+id/textView_register_empty1"
+                                android:text="No"
+                                android:textSize="16sp"
+                                android:textStyle="normal" />
+
+                            <RadioButton
+                                android:id="@+id/radioButton_medication_no"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:layout_marginBottom="15dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_toLeftOf="@+id/textView_register_medication"
+                                android:text="" />
+
+                            <View
+                                android:id="@+id/textView_register_empty1"
+                                android:layout_width="0.5dp"
+                                android:layout_height="30dp"
+                                android:layout_centerHorizontal="true"
+                                android:layout_centerInParent="true"
+                                android:layout_marginBottom="15dp"
+                                android:background="@color/black" />
+
+                            <RadioButton
+                                android:id="@+id/radioButton_medication_yes"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:layout_marginBottom="15dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_toRightOf="@+id/textView_register_empty1"
+                                android:text="" />
+
+
+                            <TextView
+                                android:id="@+id/textView_register_yes"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:layout_marginBottom="15dp"
+                                android:layout_toRightOf="@+id/radioButton_medication_yes"
+                                android:text="Yes"
+                                android:textSize="16sp"
+                                android:textStyle="normal" />
+
+
+                            <View
+                                android:id="@+id/vi24"
+                                android:layout_width="match_parent"
+                                android:layout_height="0.3dp"
+                                android:layout_below="@+id/textView_register_empty1"
+                                android:layout_marginLeft="15dp"
+                                android:layout_marginRight="15dp"
+                                android:layout_marginTop="5dp"
+                                android:background="@color/light_gray" />
+
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+                </android.support.v7.widget.CardView>
+
+
+                <TextView
+                    android:id="@+id/textView_register_yes_empty"
+                    android:layout_width="wrap_content"
+                    android:layout_height="10dp"
+                    android:layout_centerInParent="true"
+                    android:layout_below="@+id/patient_adtional_info_card"
+                    android:text=""
+                    android:textSize="16sp"
+                    android:textStyle="normal" />
+
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+    </ScrollView>
+
+</RelativeLayout>

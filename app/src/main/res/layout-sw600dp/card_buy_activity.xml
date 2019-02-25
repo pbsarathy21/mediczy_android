@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_buy_activity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/tool_bar_cardbuy"
+        layout="@layout/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view_card_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tool_bar_cardbuy"
+        android:clipToPadding="false"
+        android:visibility="gone"
+        android:layoutAnimation="@anim/recyclerview_animation_fall_down"
+        android:scrollbars="vertical" />
+
+    <ScrollView
+        android:id="@+id/scrollview_cardbuy"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/button_card_buy_buy"
+        android:layout_below="@+id/recycler_view_card_list"
+        android:background="@color/white">
+
+        <RelativeLayout
+            android:id="@+id/rl_cardbuy_all"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+            <RelativeLayout
+                android:id="@+id/rl_cardbuy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white">
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/card_cardbuy"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginBottom="@dimen/Margin_2"
+                    android:layout_marginLeft="@dimen/Margin_5"
+                    android:layout_marginRight="@dimen/Margin_5"
+                    android:background="@color/white"
+                    card_view:cardCornerRadius="3dp"
+                    card_view:cardElevation="@dimen/elevation_4">
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/white">
+
+                        <Button
+                            android:id="@+id/button_card_buy_select_card"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginBottom="@dimen/Margin_10"
+                            android:background="@color/color_1"
+                            android:text="Select health Card"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/Text_size_16" />
+
+                        <Button
+                            android:id="@+id/button_card_buy_faq"
+                            android:layout_width="match_parent"
+                            android:layout_height="42dp"
+                            android:layout_below="@+id/button_card_buy_select_card"
+                            android:background="@color/color_1"
+                            android:text="Health Card FAQ"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/Text_size_16" />
+
+                        <RelativeLayout
+                            android:id="@+id/rl_card_buy_selected_card"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/button_card_buy_faq"
+                            android:layout_marginTop="@dimen/Margin_8"
+                            android:layout_marginLeft="@dimen/Margin_5"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tv_card_buy_selected_card_value"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_toRightOf="@+id/tv_card_buy_selected_card"
+                                android:layout_centerInParent="true"
+                                android:layout_marginRight="@dimen/Margin_45"
+                                android:text=""
+                                android:textStyle="bold"
+                                android:textColor="@color/light_gray_text"
+                                android:textSize="15sp" />
+
+                            <TextView
+                                android:id="@+id/tv_card_buy_selected_card"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:layout_marginRight="5dp"
+                                android:layout_alignParentLeft="true"
+                                android:maxLines="1"
+                                android:text="Selected Health Card :"
+                                android:textColor="@color/blue_1"
+                                android:textSize="16sp" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rl_first_name_card_buy"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/rl_card_buy_selected_card"
+                            android:layout_marginTop="@dimen/Margin_5">
+
+                            <android.support.design.widget.TextInputLayout
+                                android:id="@+id/ed_first_name_card_buy"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true">
+
+                                <EditText
+                                    android:id="@+id/editText_first_name_card_buy"
+                                    style="@style/CustomEditText_Register"
+                                    android:ems="10"
+                                    android:hint="First Name"
+                                    android:inputType="text" />
+
+                            </android.support.design.widget.TextInputLayout>
+
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rl_last_name_card_buy"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/rl_first_name_card_buy"
+                            android:layout_marginTop="@dimen/Margin_15">
+
+                            <android.support.design.widget.TextInputLayout
+                                android:id="@+id/ed_last_name_card_buy"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true">
+
+                                <EditText
+                                    android:id="@+id/editText_last_name_card_buy"
+                                    style="@style/CustomEditText_Register"
+                                    android:ems="10"
+                                    android:hint="Last Name"
+                                    android:inputType="text" />
+
+                            </android.support.design.widget.TextInputLayout>
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rl_email_card_buy"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/rl_last_name_card_buy"
+                            android:layout_marginTop="@dimen/Margin_15">
+
+                            <android.support.design.widget.TextInputLayout
+                                android:id="@+id/ed_email_card_buy"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true">
+
+                                <EditText
+                                    android:id="@+id/editText_email_card_buy"
+                                    style="@style/CustomEditText_Register"
+                                    android:ems="10"
+                                    android:hint="Email"
+                                    android:inputType="textEmailAddress" />
+
+                            </android.support.design.widget.TextInputLayout>
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_cardbuy_address_all"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/rl_cardbuy"
+                android:layout_marginTop="@dimen/Margin_15"
+                android:background="@color/white">
+
+                <RelativeLayout
+                    android:id="@+id/rl_cardbuy_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white">
+
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/card_cardbuy_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginBottom="@dimen/Margin_2"
+                        android:layout_marginLeft="@dimen/Margin_5"
+                        android:layout_marginRight="@dimen/Margin_5"
+                        android:layout_marginTop="@dimen/Margin_5"
+                        android:background="@color/white"
+                        card_view:cardCornerRadius="3dp"
+                        card_view:cardElevation="@dimen/elevation_4">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/white">
+
+                            <RelativeLayout
+                                android:id="@+id/rl_street_card_buy"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/Margin_5">
+
+                                <android.support.design.widget.TextInputLayout
+                                    android:id="@+id/ed_street_card_buy"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentLeft="true">
+
+                                    <EditText
+                                        android:id="@+id/editText_street_card_buy"
+                                        style="@style/CustomEditText_Register"
+                                        android:ems="10"
+                                        android:hint="Street Address"
+                                        android:inputType="textMultiLine" />
+
+                                </android.support.design.widget.TextInputLayout>
+
+                            </RelativeLayout>
+
+
+                            <RelativeLayout
+                                android:id="@+id/rl_street1_card_buy"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/rl_street_card_buy"
+                                android:layout_marginTop="@dimen/Margin_15">
+
+                                <android.support.design.widget.TextInputLayout
+                                    android:id="@+id/ed_street1_card_buy"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentLeft="true">
+
+                                    <EditText
+                                        android:id="@+id/editText_street1_card_buy"
+                                        style="@style/CustomEditText_Register"
+                                        android:ems="10"
+                                        android:hint="Street Address Line 2 (optional)"
+                                        android:inputType="textMultiLine" />
+
+                                </android.support.design.widget.TextInputLayout>
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/rl_city_card_buy"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/rl_street1_card_buy"
+                                android:layout_marginTop="@dimen/Margin_15">
+
+                                <android.support.design.widget.TextInputLayout
+                                    android:id="@+id/ed_city_card_buy"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentLeft="true">
+
+                                    <EditText
+                                        android:id="@+id/editText_city_card_buy"
+                                        style="@style/CustomEditText_Register"
+                                        android:ems="10"
+                                        android:hint="City"
+                                        android:inputType="text" />
+
+                                </android.support.design.widget.TextInputLayout>
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/rl_state_card_buy"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/rl_city_card_buy"
+                                android:layout_marginTop="@dimen/Margin_15">
+
+                                <android.support.design.widget.TextInputLayout
+                                    android:id="@+id/ed_state_card_buy"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentLeft="true">
+
+                                    <EditText
+                                        android:id="@+id/editText_state_card_buy"
+                                        style="@style/CustomEditText_Register"
+                                        android:ems="10"
+                                        android:hint="State"
+                                        android:inputType="text" />
+
+                                </android.support.design.widget.TextInputLayout>
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/rl_zip_code_card_buy"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/rl_state_card_buy"
+                                android:layout_marginTop="@dimen/Margin_15">
+
+                                <android.support.design.widget.TextInputLayout
+                                    android:id="@+id/ed_zip_code_card_buy"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentLeft="true">
+
+                                    <EditText
+                                        android:id="@+id/editText_zip_code_card_buy"
+                                        style="@style/CustomEditText_Register"
+                                        android:ems="10"
+                                        android:hint="Zip Code"
+                                        android:inputType="number" />
+
+                                </android.support.design.widget.TextInputLayout>
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/rl_country_card_buy"
+                                android:layout_width="match_parent"
+                                android:layout_height="55dp"
+                                android:layout_below="@+id/rl_zip_code_card_buy"
+                                android:layout_marginLeft="@dimen/Margin_5"
+                                android:layout_marginTop="@dimen/Margin_15">
+
+                                <Spinner
+                                    android:id="@+id/spinner_country_card_buy"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:hint="Appointment Available" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/rl_phone_card_buy"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/rl_country_card_buy"
+                                android:layout_marginTop="@dimen/Margin_15">
+
+                                <android.support.design.widget.TextInputLayout
+                                    android:id="@+id/ed_phone_card_buy"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentLeft="true">
+
+                                    <EditText
+                                        android:id="@+id/editText_phone_card_buy"
+                                        style="@style/CustomEditText_Register"
+                                        android:ems="10"
+                                        android:hint="Phone"
+                                        android:inputType="number" />
+
+                                </android.support.design.widget.TextInputLayout>
+                            </RelativeLayout>
+                        </RelativeLayout>
+                    </android.support.v7.widget.CardView>
+                </RelativeLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/button_card_buy_buy"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="10dp"
+        android:background="@color/color_1"
+        android:text="Buy"
+        android:textColor="@color/white"
+        android:textSize="@dimen/Text_size_16"
+        android:textStyle="bold" />
+
+
+</RelativeLayout>

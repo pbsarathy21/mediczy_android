@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/ll_view_time_slot_list_inside"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/color_1"
+            android:paddingTop="?attr/actionBarSize">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler_view_time_slot_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="true"
+                android:scrollbars="vertical" />
+
+
+            <TextView
+                android:id="@+id/textview_doctor_date_selected"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/recycler_view_time_slot_list"
+                android:layout_marginLeft="@dimen/Margin_20"
+                android:layout_marginTop="@dimen/Margin_10"
+                android:layout_marginBottom="@dimen/Margin_10"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="NOV 06 2016"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/linear_time_slot_heading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll_view_time_slot_list_inside"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/textview_doctor_time_heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/Margin_20"
+            android:layout_marginTop="@dimen/Margin_15"
+            android:layout_marginBottom="@dimen/Margin_5"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="Time Slot"
+            android:textStyle="bold"
+            android:textColor="@color/text_gray"
+            android:textSize="18sp" />
+
+        </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/linear_time_slot"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/linear_time_slot_heading"
+        android:layout_above="@+id/button_doctor_appoin_submit"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view_time_slot_list_1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="true"
+            android:scrollbars="vertical" />
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/button_doctor_appoin_submit"
+        android:layout_width="110dp"
+        android:layout_height="42dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="@dimen/Margin_10"
+        android:layout_marginBottom="@dimen/Margin_10"
+        android:background="@drawable/btn_border_blue"
+        android:text="SAVE"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+
+    <!--  <app:android.support.v7.widget.Toolbar
+          android:id="@+id/toolbar_time_slot"
+          android:layout_width="match_parent"
+          android:layout_height="?attr/actionBarSize"
+          android:background="?attr/colorPrimary"
+          android:elevation="@dimen/elevation"
+          app:theme="@style/AppTheme_ToolBar" />-->
+
+</RelativeLayout>
