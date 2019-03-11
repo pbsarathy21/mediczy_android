@@ -45,6 +45,8 @@
     <dimen name="Margin_80">80dp</dimen>
     <dimen name="Margin_100">100dp</dimen>
 
+    <dimen name="chat_size">@dimen/_14sdp</dimen>
+
     <!-- Default screen margins, per the Android Design guidelines. -->
 
     <!-- app-lozic-->

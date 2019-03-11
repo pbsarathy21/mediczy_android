@@ -181,7 +181,7 @@ public class ChatBotActivity extends AppCompatActivity implements Callback<ListD
         if (Consts.Commom_Flag.equalsIgnoreCase("0")) {
 
 
-            Rob.add(new Left_Robert("Hi! I'am an automatic sympton checker.This service is for informational purpose and is not a qualified medical opinion ,In case health emergency, call your local emergency number immediately ", "0", ""));
+            Rob.add(new Left_Robert("Hi! I'am an automatic symptom checker.\n\nThis service is for informational purpose and is not a qualified medical opinion. \n\nIn case health emergency, call your local emergency number immediately ", "0", ""));
             Rob.add(new Left_Robert("Do you accept our terms and Conditions?", "0", ""));
             c_botAdapter = new C_BotAdapter(ChatBotActivity.this, Rob);
             chatview.setAdapter(c_botAdapter);

@@ -496,7 +496,7 @@ public class HomeNavigation extends AppCompatActivity implements ResponseListene
         setDrawerAction();
     }
 
-    private void setMenuItemsName_Icon() {
+    /*private void setMenuItemsName_Icon() {
         String[] menuTitle = null;
         String[] menuIcon = null;
         if (type.equalsIgnoreCase("Doctor")) {
@@ -517,6 +517,38 @@ public class HomeNavigation extends AppCompatActivity implements ResponseListene
 
             menuIcon = new String[] {getResources().getString(R.string.home_menu_Category), getResources().getString(R.string.sim_li), getResources().getString(R.string.home_menu_Hospital),
                     getResources().getString(R.string.home_menu_Prescription) ,getResources().getString(R.string.Award),
+                    getResources().getString(R.string.home_menu_Your_Appointment), getResources().getString(R.string.home_menu_MyInsurance),
+                    getResources().getString(R.string.home_menu_setting), getResources().getString(R.string.home_menu_share)};
+        }
+        for (int i=0; i<menuTitle.length; i++) {
+            BeanHomeNavigation beanHOME = new BeanHomeNavigation();
+            beanHOME.setTitle(menuTitle[i]);
+            beanHOME.setIcon(menuIcon[i]);
+            array_title.add(beanHOME);
+        }
+    }*/
+
+    private void setMenuItemsName_Icon() {
+        String[] menuTitle = null;
+        String[] menuIcon = null;
+        if (type.equalsIgnoreCase("Doctor")) {
+            menuTitle = new String[] {getResources().getString(R.string.Category_Doctor), getResources().getString(R.string.Network_Partners_Doctor),
+                    getResources().getString(R.string.Doctor_Prescribed_Patient), getResources().getString(R.string.My_Report_Doctor),
+                    getResources().getString(R.string.My_Calender_Doctor), getResources().getString(R.string.My_Appointment_Doctor),
+                    getResources().getString(R.string.My_Insurance_Doctor), getResources().getString(R.string.Settings_Doctor)};
+
+            menuIcon = new String[] {getResources().getString(R.string.home_menu_Category), getResources().getString(R.string.home_menu_Hospital),
+                    getResources().getString(R.string.home_menu_Prescription), getResources().getString(R.string.card_buy),
+                    getResources().getString(R.string.home_menu_Appointment), getResources().getString(R.string.home_menu_Your_Appointment),
+                    getResources().getString(R.string.home_menu_MyInsurance), getResources().getString(R.string.home_menu_setting)};
+        }if (type.equalsIgnoreCase("Patient")) {
+            menuTitle = new String[] {getResources().getString(R.string.Category_Patient), getResources().getString(R.string.sys_lis), getResources().getString(R.string.Network_Partners_Patient),
+                    getResources().getString(R.string.Doctor_Prescribed_Patient),
+                    getResources().getString(R.string.My_Appointment_Patient), getResources().getString(R.string.My_Insurance_Patient),
+                    getResources().getString(R.string.Settings_Patient), getResources().getString(R.string.Share_Patient)};
+
+            menuIcon = new String[] {getResources().getString(R.string.home_menu_Category), getResources().getString(R.string.sim_li), getResources().getString(R.string.home_menu_Hospital),
+                    getResources().getString(R.string.home_menu_Prescription) ,
                     getResources().getString(R.string.home_menu_Your_Appointment), getResources().getString(R.string.home_menu_MyInsurance),
                     getResources().getString(R.string.home_menu_setting), getResources().getString(R.string.home_menu_share)};
         }
@@ -573,7 +605,7 @@ public class HomeNavigation extends AppCompatActivity implements ResponseListene
         }
     }
 
-    private void selectItemPatient(int position) {
+  /*  private void selectItemPatient(int position) {
         showChatIconToolbar();
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         fragmentTransaction = ft;
@@ -606,6 +638,46 @@ public class HomeNavigation extends AppCompatActivity implements ResponseListene
                 break;
             case 8:
                 share();
+                break;
+        }
+        ft.commit();
+        mDrawerList.setItemChecked(position, true);
+        setTitle(array_title.get(position).getTitle());
+        mDrawerLayout.closeDrawer(mDrawer);
+    }*/
+
+    private void selectItemPatient(int position) {
+        showChatIconToolbar();
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction = ft;
+        this.position = position;
+        switch (position) {
+            case 0:
+                ft.replace(R.id.content_frame, home_fragment);
+                break;
+            case 1:
+                moveToReportListActivity();
+                break;
+            case 2:
+                moveToAmbulanceList();
+                break;
+            case 3:
+                ft.replace(R.id.content_frame, doctor_prescribedFragment);
+                break;
+            case 4:
+                ft.replace(R.id.content_frame, yourAppointmentFragment);
+                break;
+            case 5:
+                moveToNetworkPartners();
+                break;
+            case 6:
+                ft.replace(R.id.content_frame, settingsFragment);
+                break;
+            case 7:
+                share();
+                break;
+            case 8:
+
                 break;
         }
         ft.commit();

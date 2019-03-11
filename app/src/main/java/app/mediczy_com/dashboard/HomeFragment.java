@@ -32,6 +32,7 @@ import java.util.List;
 import java.util.Map;
 
 import app.mediczy_com.ChatBot.ChatBotActivity;
+import app.mediczy_com.CustomTextView;
 import app.mediczy_com.DoctorsList;
 import app.mediczy_com.HomeNavigation;
 import app.mediczy_com.R;
@@ -74,7 +75,7 @@ public class HomeFragment extends Fragment implements ResponseListener,
     private Network_Partners_Category_Adapter adapter;
     private ArrayList<Merchant_CategoriesListResponse> arrayListCategory = new ArrayList<Merchant_CategoriesListResponse>();
     private Merchant_CategoriesListResponse object;
-    double latitude = 0.0, longitude = 0.0;
+    double latitude = 13.0827, longitude = 80.2707;
     private ArrayList<Home_Type_Bean> arrayList = new ArrayList<Home_Type_Bean>();
     private String device_id, redId, Ph_Number, ID, ReqType = "", category_id,
             Name, gethour, getminute, version_code, logout_status, doctor_online_status;
@@ -88,6 +89,8 @@ public class HomeFragment extends Fragment implements ResponseListener,
     Session session;
     ImageView fab;
     private String UserType;
+
+    CustomTextView askMe;
     
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -96,6 +99,11 @@ public class HomeFragment extends Fragment implements ResponseListener,
   //      Actionbar_Menu(rootView);
         homeFragment = this;
         session = new Session(getActivity());
+
+        askMe = rootView.findViewById(R.id.ask_me);
+
+        askMe.setSelected(true);
+
         init(rootView);
 
         UserType = LocalStore.getInstance().getType(context);
@@ -249,7 +257,7 @@ public class HomeFragment extends Fragment implements ResponseListener,
         getActivity().overridePendingTransition(R.anim.fade_in_1, R.anim.fade_out_1);
     }
 
-    public boolean isLocationPermissionGranted(int type) {
+   /* public boolean isLocationPermissionGranted(int type) {
         if (Build.VERSION.SDK_INT >= 23) {
             if (getActivity().checkSelfPermission(Manifest.permission.ACCESS_COARSE_LOCATION)
                     == PackageManager.PERMISSION_GRANTED) {
@@ -266,7 +274,11 @@ public class HomeFragment extends Fragment implements ResponseListener,
             // Log.v(TAG,"Permission is granted");
             getLatitude_Longitude(type);
             return true;
-        }
+        }*/
+
+        public boolean isLocationPermissionGranted(int type) {
+            getLatitude_Longitude(type);
+            return true;
     }
 
     @Override
@@ -437,7 +449,7 @@ public class HomeFragment extends Fragment implements ResponseListener,
         moveToDoctorActivity();
     }
 
-    private boolean getLatitude_Longitude(int type) {
+ /*   private boolean getLatitude_Longitude(int type) {
         boolean status = false;
         GPSTracker gpsTracker = new GPSTracker(context, getActivity());
         gpsTracker.getLocation();
@@ -460,7 +472,49 @@ public class HomeFragment extends Fragment implements ResponseListener,
             gpsTracker.showSettingsAlert();
         }
         return status;
+    }*/
+
+    private boolean getLatitude_Longitude(int type) {
+        boolean status = false;
+        GPSTracker gpsTracker = new GPSTracker(context, getActivity());
+        gpsTracker.getLocation();
+        latitude =  13.0827;
+        longitude =  80.2707;
+        if (gpsTracker.canGetLocation()) {
+            latitude =  13.0827;
+            longitude =  80.2707;
+            if (latitude != 0.0) {
+                String latLongString = String.valueOf(latitude) +","+ String.valueOf(longitude);
+                MLog.e("current_latLongString:", "" + latLongString);
+                if (type==2) {
+                    moveToDoctorActivity();
+                } else if (type == 1) {
+                    moveToTopCategory();
+                }
+                status = true;
+            } else {
+                String latLongString = String.valueOf(latitude) +","+ String.valueOf(longitude);
+                MLog.e("current_latLongString:", "" + latLongString);
+                if (type==2) {
+                    moveToDoctorActivity();
+                } else if (type == 1) {
+                    moveToTopCategory();
+                }
+                status = true;
+            }
+        } else {
+            String latLongString = String.valueOf(latitude) +","+ String.valueOf(longitude);
+            MLog.e("current_latLongString:", "" + latLongString);
+            if (type==2) {
+                moveToDoctorActivity();
+            } else if (type == 1) {
+                moveToTopCategory();
+            }
+            status = true;
+        }
+        return status;
     }
+
     @Override
     public void onAdsClicked(Home_Type_Bean object) {
         String title = object.getTitleAds();
