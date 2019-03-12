@@ -181,8 +181,9 @@ public class ChatBotActivity extends AppCompatActivity implements Callback<ListD
         if (Consts.Commom_Flag.equalsIgnoreCase("0")) {
 
 
-            Rob.add(new Left_Robert("Hi! I'am an automatic symptom checker.\n\nThis service is for informational purpose and is not a qualified medical opinion. \n\nIn case health emergency, call your local emergency number immediately ", "0", ""));
-            Rob.add(new Left_Robert("Do you accept our terms and Conditions?", "0", ""));
+            Rob.add(new Left_Robert("Hi, I am Mediczy!\n\nI can help you if you're feeling unwell.\n\n" +
+                    "Just Tell me your Health Symptoms to Start Assessment.", "0", ""));
+            Rob.add(new Left_Robert("After your assessment, Mediczy will suggest what you could do next. This may include a visit to a doctor, pharmacist, or specialist, or to seek emergency care.", "0", ""));
             c_botAdapter = new C_BotAdapter(ChatBotActivity.this, Rob);
             chatview.setAdapter(c_botAdapter);
             LinearLayoutManager layoutManager = new LinearLayoutManager(ChatBotActivity.this);
@@ -327,7 +328,7 @@ public class ChatBotActivity extends AppCompatActivity implements Callback<ListD
                 } else {
                     if (edit_send.getText().toString().equalsIgnoreCase("")) {
 
-                        Toast.makeText(ChatBotActivity.this, "Enter the Quries", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ChatBotActivity.this, "Enter the Queries", Toast.LENGTH_SHORT).show();
 
                     } else {
 
@@ -450,7 +451,7 @@ public class ChatBotActivity extends AppCompatActivity implements Callback<ListD
                 Consts.Commom_Flag = "3";
                 Rob.add(new Left_Robert("Thank you!   ", "0", Consts.Common_gender));
                 Rob.add(new Left_Robert("What concerns you most about your health?", "0", ""));
-                Rob.add(new Left_Robert("Please describe your first Major symptoms.", "0", ""));
+                Rob.add(new Left_Robert("Enter your Health Symptoms to Understand what could be wrong (Example:-\"Cold\" \"Fever\" \"Back Pain\")", "0", ""));
                 c_botAdapter = new C_BotAdapter(ChatBotActivity.this, Rob);
                 chatview.setAdapter(c_botAdapter);
                 LinearLayoutManager layoutManager = new LinearLayoutManager(ChatBotActivity.this);

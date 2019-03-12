@@ -11,13 +11,12 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.view.animation.AnimationUtils;
-import android.view.animation.LayoutAnimationController;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
+
 import app.mediczy_com.BaseActivity;
 import app.mediczy_com.R;
 import app.mediczy_com.adapter.ChatConversation_Adapter;
