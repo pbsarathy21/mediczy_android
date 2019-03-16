@@ -59,7 +59,7 @@
         android:testOnly="false"
         android:theme="@style/AppTheme"
         tools:replace="allowBackup,supportsRtl"
-        tools:ignore="HardcodedDebugMode">
+        tools:ignore="GoogleAppIndexingWarning,HardcodedDebugMode">
 
         <provider
             android:name="android.support.v4.content.FileProvider"

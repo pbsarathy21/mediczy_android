@@ -22,8 +22,8 @@ android {
         applicationId "app.mediczy_com"
         minSdkVersion 17
         targetSdkVersion 26
-        versionCode 22
-        versionName "4.7"
+        versionCode 24
+        versionName "4.9"
 
         // Enabling multidex support.
         multiDexEnabled true

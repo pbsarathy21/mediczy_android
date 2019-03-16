@@ -529,7 +529,11 @@ public class ChatListActivity extends AppCompatActivity implements ResponseListe
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == RESULT_OK) {
             if (requestCode == CAMERA_REQUEST_2) {
-                imagePath = Utility.getInstance().getRealPathFromURI(picUri, ChatListActivity.this);
+
+                //imagePath = data.getData().getPath();
+
+                imagePath = "/storage/emulated/0" + Utility.getInstance().getRealPathFromURI(picUri, ChatListActivity.this).substring(10);
+
                 MLog.e("selectedImagePath------->", "" + imagePath);
 
                 BitmapFactory.Options bmOptions = new BitmapFactory.Options();

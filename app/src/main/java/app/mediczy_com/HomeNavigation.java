@@ -533,12 +533,12 @@ public class HomeNavigation extends AppCompatActivity implements ResponseListene
         String[] menuIcon = null;
         if (type.equalsIgnoreCase("Doctor")) {
             menuTitle = new String[] {getResources().getString(R.string.Category_Doctor), getResources().getString(R.string.Network_Partners_Doctor),
-                    getResources().getString(R.string.Doctor_Prescribed_Patient), getResources().getString(R.string.My_Report_Doctor),
+                    getResources().getString(R.string.Doctor_Prescribed_Patient),
                     getResources().getString(R.string.My_Calender_Doctor), getResources().getString(R.string.My_Appointment_Doctor),
                     getResources().getString(R.string.My_Insurance_Doctor), getResources().getString(R.string.Settings_Doctor)};
 
             menuIcon = new String[] {getResources().getString(R.string.home_menu_Category), getResources().getString(R.string.home_menu_Hospital),
-                    getResources().getString(R.string.home_menu_Prescription), getResources().getString(R.string.card_buy),
+                    getResources().getString(R.string.home_menu_Prescription),
                     getResources().getString(R.string.home_menu_Appointment), getResources().getString(R.string.home_menu_Your_Appointment),
                     getResources().getString(R.string.home_menu_MyInsurance), getResources().getString(R.string.home_menu_setting)};
         }if (type.equalsIgnoreCase("Patient")) {
@@ -686,7 +686,7 @@ public class HomeNavigation extends AppCompatActivity implements ResponseListene
         mDrawerLayout.closeDrawer(mDrawer);
     }
 
-    private void selectItemDoctor(int position) {
+   /* private void selectItemDoctor(int position) {
         showChatIconToolbar();
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         fragmentTransaction=ft;
@@ -715,6 +715,43 @@ public class HomeNavigation extends AppCompatActivity implements ResponseListene
                 break;
             case 7:
                 ft.replace(R.id.content_frame, settingsFragment);
+                break;
+        }
+        ft.commit();
+        mDrawerList.setItemChecked(position, true);
+        setTitle(array_title.get(position).getTitle());
+        mDrawerLayout.closeDrawer(mDrawer);
+    }
+*/
+
+    private void selectItemDoctor(int position) {
+        showChatIconToolbar();
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction=ft;
+        switch (position) {
+            case 0:
+                ft.replace(R.id.content_frame, home_fragment);
+                break;
+            case 1:
+                moveToAmbulanceList();
+                break;
+            case 2:
+                ft.replace(R.id.content_frame, doctor_prescribedFragment);
+                break;
+            case 3:
+                ft.replace(R.id.content_frame, doctorAppointmentFragment);
+                break;
+            case 4:
+                ft.replace(R.id.content_frame, yourAppointmentFragment);
+                break;
+            case 5:
+                moveToNetworkPartners();
+                break;
+            case 6:
+                ft.replace(R.id.content_frame, settingsFragment);
+                break;
+            case 7:
+
                 break;
         }
         ft.commit();

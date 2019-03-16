@@ -88,9 +88,11 @@ public class HomeFragment extends Fragment implements ResponseListener,
 
     Session session;
     ImageView fab;
+    CustomTextView askMe;
+
     private String UserType;
 
-    CustomTextView askMe;
+
     
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -110,9 +112,11 @@ public class HomeFragment extends Fragment implements ResponseListener,
         MLog.e("UserType", "" + UserType);
         if (UserType.equalsIgnoreCase("Patient")) {
             fab.setVisibility(View.VISIBLE);
+            askMe.setVisibility(View.VISIBLE);
 
         } else if (UserType.equalsIgnoreCase("Doctor")) {
             fab.setVisibility(View.GONE);
+            askMe.setVisibility(View.GONE);
         }
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -123,6 +127,17 @@ public class HomeFragment extends Fragment implements ResponseListener,
 //                getActivity().finish();
             }
         });
+
+        askMe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), ChatBotActivity.class);
+                getActivity().startActivity(intent);
+                getActivity().overridePendingTransition(R.anim.enter, R.anim.exit);
+//                getActivity().finish();
+            }
+        });
+
         return rootView;
     }
 
