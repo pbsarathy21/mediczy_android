@@ -306,7 +306,7 @@ public class HomeFragment extends Fragment implements ResponseListener,
                 perms.put(android.Manifest.permission.ACCESS_COARSE_LOCATION, PackageManager.PERMISSION_GRANTED);
                 perms.put(android.Manifest.permission.RECORD_AUDIO, PackageManager.PERMISSION_GRANTED);
                 perms.put(android.Manifest.permission.CAMERA, PackageManager.PERMISSION_GRANTED);
-                perms.put(android.Manifest.permission.CALL_PHONE, PackageManager.PERMISSION_GRANTED);
+                //perms.put(android.Manifest.permission.CALL_PHONE, PackageManager.PERMISSION_GRANTED);
                 // Fill with results
                 for (int i = 0; i < permissions.length; i++)
                     perms.put(permissions[i], grantResults[i]);
@@ -318,10 +318,10 @@ public class HomeFragment extends Fragment implements ResponseListener,
                     getActivity().finish();
                 } else if( perms.get(android.Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_DENIED) {
                     getActivity().finish();
-                } else if( perms.get(android.Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_DENIED) {
-                    Utility.getInstance().showToast("phone call permission denied", context);
+                } /*else if( perms.get(android.Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_DENIED) {
+                    Utility.getInstance().showToast("phone call permission denied android", context);
                     getActivity().finish();
-                }else {
+                }*/else {
        //             showRecycleViewView();
                 }
                 if( perms.get(android.Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_DENIED) {
@@ -349,8 +349,8 @@ public class HomeFragment extends Fragment implements ResponseListener,
                 permissionsNeeded.add("RECORD_AUDIO");
             if (!addPermission(permissionsList, Manifest.permission.CAMERA))
                 permissionsNeeded.add("CAMERA");
-            if (!addPermission(permissionsList, Manifest.permission.CALL_PHONE))
-                permissionsNeeded.add("CALL_PHONE");
+            /*if (!addPermission(permissionsList, Manifest.permission.CALL_PHONE))
+                permissionsNeeded.add("CALL_PHONE");*/
             if (permissionsList.size() > 0) {
                 if (permissionsNeeded.size() > 0) {
                     // Need Rationale

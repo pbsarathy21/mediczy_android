@@ -17,6 +17,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.text.SpannableString;
 import android.text.style.UnderlineSpan;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -34,6 +35,8 @@ import android.widget.TextView;
 import com.google.firebase.iid.FirebaseInstanceId;
 import app.mediczy_com.HomeNavigation;
 import app.mediczy_com.R;
+import app.mediczy_com.Retrofit.ListDetails;
+import app.mediczy_com.Retrofit.RetrofitInterface;
 import app.mediczy_com.dialog.AlertDialogFinish;
 import app.mediczy_com.fcm.MyFirebaseMessagingService;
 import app.mediczy_com.iconstant.Constant;
@@ -48,6 +51,12 @@ import app.mediczy_com.webservice.request.RequestManager;
 import app.mediczy_com.webservice.request.ResponseListener;
 import app.mediczy_com.webservicemodel.request.RegisterRequest;
 import app.mediczy_com.webservicemodel.response.CommonResponse;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+import retrofit2.converter.scalars.ScalarsConverterFactory;
 
 /**
  * Created by Prithivi Raj on 26-11-2015.
@@ -91,6 +100,14 @@ public class Register extends AppCompatActivity implements View.OnClickListener,
         if (actionBar != null) {
             actionBar.hide();
         }
+
+        AppSignatureHashHelper appSignatureHashHelper = new AppSignatureHashHelper(this);
+
+        Log.i(TAG, "hash -> "+ appSignatureHashHelper.getAppSignatures().get(0));
+
+        sendHashtoServer(appSignatureHashHelper.getAppSignatures().get(0));
+
+
         init();
 
         Sp_Country.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -147,6 +164,43 @@ public class Register extends AppCompatActivity implements View.OnClickListener,
                 MLog.e("str_country_code:", "" + str_country_code);
             }
             public void onNothingSelected(AdapterView<?> parent) {
+            }
+        });
+    }
+
+    private void sendHashtoServer(String s) {
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(RetrofitInterface.url)
+                .addConverterFactory(ScalarsConverterFactory.create())
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        RetrofitInterface retrofitInterface = retrofit.create(RetrofitInterface.class);
+
+        Call<ListDetails> call = retrofitInterface.hashKeyApi(s);
+
+        call.enqueue(new Callback<ListDetails>() {
+            @Override
+            public void onResponse(Call<ListDetails> call, Response<ListDetails> response) {
+
+                if (response.body() != null)
+                {
+                    Log.i(TAG, "hash status -> "+response.body().status);
+                    Log.i(TAG, "hash message -> "+response.body().msg);
+                }
+                else {
+                    Log.e(TAG, "hash status -> error");
+                    Log.e(TAG, "hash message -> null");
+                }
+
+            }
+
+            @Override
+            public void onFailure(Call<ListDetails> call, Throwable t) {
+
+                Log.e(TAG, "hash onFailure -> "+t);
+
             }
         });
     }
@@ -709,8 +763,9 @@ public class Register extends AppCompatActivity implements View.OnClickListener,
             } else {
 
                 //   Log.v(TAG,"Permission is revoked");
-                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.RECEIVE_SMS}, 1);
-                return false;
+                //ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.RECEIVE_SMS}, 1);
+                onRequest();
+                return true;
             }
         }
         else { //permission is automatically granted on sdk<23 upon installation

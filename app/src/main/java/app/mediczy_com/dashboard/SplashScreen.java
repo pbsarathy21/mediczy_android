@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
@@ -12,10 +13,18 @@ import com.bumptech.glide.request.target.GlideDrawableImageViewTarget;
 import org.json.JSONObject;
 import app.mediczy_com.HomeNavigation;
 import app.mediczy_com.R;
+import app.mediczy_com.Retrofit.ListDetails;
+import app.mediczy_com.Retrofit.RetrofitInterface;
 import app.mediczy_com.Splash_Side.MoveActivity;
 import app.mediczy_com.storage.LocalStore;
 import app.mediczy_com.utility.MLog;
 import app.mediczy_com.video_call.updated.IncomingCallScreenActivityVideoCall;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+import retrofit2.converter.scalars.ScalarsConverterFactory;
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
@@ -25,6 +34,7 @@ public class SplashScreen extends Activity {
     // Splash screen timer
     private static int SPLASH_TIME_OUT = 3250;
     ImageView fullscreen_content;
+    private static final String TAG = "SplashScreen";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,6 +94,8 @@ public class SplashScreen extends Activity {
 //            }
 //        }, SPLASH_TIME_OUT);
     }
+
+
 
     private void notificationVideoCall() {
         try {

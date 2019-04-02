@@ -3,6 +3,8 @@ package app.mediczy_com.Retrofit;
 import app.mediczy_com.request.CommonRequest;
 import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.Field;
+import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 
@@ -56,6 +58,10 @@ public interface RetrofitInterface {
 
     @GET("splash-screens")
     Call<ListDetails> slide();
+
+    @FormUrlEncoded
+    @POST("android_message_key")
+    Call<ListDetails> hashKeyApi(@Field("hash_key") String hash_key);
 
 
 }

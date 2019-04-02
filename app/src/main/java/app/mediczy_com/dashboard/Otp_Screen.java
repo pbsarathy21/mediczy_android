@@ -7,14 +7,23 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.gms.auth.api.phone.SmsRetriever;
+import com.google.android.gms.auth.api.phone.SmsRetrieverClient;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 
 import app.mediczy_com.BaseActivity;
 import app.mediczy_com.HomeNavigation;
@@ -33,7 +42,7 @@ import app.mediczy_com.webservicemodel.response.CommonResponse;
 /**
  * Created by Prithivi Raj on 09-12-2015.
  */
-public class Otp_Screen extends BaseActivity implements ResponseListener {
+public class Otp_Screen extends BaseActivity implements ResponseListener, SMSReceiver.OTPReceiveListener {
 
     private TextView Ed_Otp;
     private Button btn_Resend;
@@ -48,20 +57,28 @@ public class Otp_Screen extends BaseActivity implements ResponseListener {
     RequestCommon requestCommon;
     private int mRequestType = 0;
 
+    private SMSReceiver smsReceiver;
+
+    private static final String TAG = "Otp_Screen";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.otp_scree);
         setToolbar();
         init();
+
+        startSMSListener();
+        
         IntentFilter filter = new IntentFilter();
         filter.addAction(Constant.Package_Service);
-        updateUIReciver = new BroadcastReceiver(){
+      /*  updateUIReciver = new BroadcastReceiver(){
             @Override
             public void onReceive(Context context, Intent intent) {
                 // TODO Auto-generated method stub
                 String state = intent.getExtras().getString("msg");
                 MLog.e("state", "" + state);
+                Log.i(TAG, "message -> "+state);
                 if (state.contains(responseOtp)){
                     Ed_Otp.setText(responseOtp);
                     fb_tick.setVisibility(View.GONE);
@@ -74,7 +91,7 @@ public class Otp_Screen extends BaseActivity implements ResponseListener {
                 }
             }
         };
-        registerReceiver(updateUIReciver, filter);
+        registerReceiver(updateUIReciver, filter);*/
 
         btn_Resend.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -93,6 +110,37 @@ public class Otp_Screen extends BaseActivity implements ResponseListener {
         });
     }
 
+    private void startSMSListener() {
+
+        try {
+            smsReceiver = new SMSReceiver();
+            smsReceiver.setOTPListener(this);
+
+            IntentFilter intentFilter = new IntentFilter();
+            intentFilter.addAction(SmsRetriever.SMS_RETRIEVED_ACTION);
+            this.registerReceiver(smsReceiver, intentFilter);
+
+            SmsRetrieverClient client = SmsRetriever.getClient(this);
+
+            Task<Void> task = client.startSmsRetriever();
+            task.addOnSuccessListener(new OnSuccessListener<Void>() {
+                @Override
+                public void onSuccess(Void aVoid) {
+                    // API successfully started
+                }
+            });
+
+            task.addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    // Fail to start API
+                }
+            });
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     private void CancelTimer() {
         try {
             if (countDownTimer!=null)
@@ -109,7 +157,12 @@ public class Otp_Screen extends BaseActivity implements ResponseListener {
     protected void onDestroy() {
         // TODO Auto-generated method stub
         super.onDestroy();
-        unregisterReceiver(updateUIReciver);
+
+        if (smsReceiver != null) {
+            LocalBroadcastManager.getInstance(this).unregisterReceiver(smsReceiver);
+        }
+
+       // unregisterReceiver(updateUIReciver);
     }
 
     private void setToolbar() {
@@ -242,5 +295,47 @@ public class Otp_Screen extends BaseActivity implements ResponseListener {
             CancelTimer();
             AlertDialogFinish.Show(Otp_Screen.this, Constant.Alart_Status500, true);
         }
+    }
+
+    @Override
+    public void onOTPReceived(String otp) {
+
+        //showToasts("OTP Received: " + otp);
+
+        Log.i(TAG, "retriever message -> "+otp);
+
+        if (otp.contains(responseOtp)){
+            Ed_Otp.setText(responseOtp);
+            fb_tick.setVisibility(View.GONE);
+            ReqType="Otp";
+            mRequestType = IConstant_WebService.WSR_Otp_Screen;
+            onRequest(ReqType);
+            CancelTimer();
+        }else {
+            showToast("Invalid otp");
+        }
+
+        if (smsReceiver != null) {
+            LocalBroadcastManager.getInstance(this).unregisterReceiver(smsReceiver);
+        }
+
+    }
+
+    @Override
+    public void onOTPTimeOut() {
+
+        showToasts("OTP Time out");
+
+    }
+
+    @Override
+    public void onOTPReceivedError(String error) {
+
+        showToasts(error);
+
+    }
+
+    private void showToasts(String msg) {
+        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
     }
 }

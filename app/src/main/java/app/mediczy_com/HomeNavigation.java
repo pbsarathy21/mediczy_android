@@ -967,8 +967,8 @@ public class HomeNavigation extends AppCompatActivity implements ResponseListene
                 permissionsNeeded.add("RECORD_AUDIO");
             if (!addPermission(permissionsList, Manifest.permission.CAMERA))
                 permissionsNeeded.add("CAMERA");
-            if (!addPermission(permissionsList, Manifest.permission.CALL_PHONE))
-                permissionsNeeded.add("CALL_PHONE");
+           /* if (!addPermission(permissionsList, Manifest.permission.CALL_PHONE))
+                permissionsNeeded.add("CALL_PHONE");*/
             if (permissionsList.size() > 0) {
                 if (permissionsNeeded.size() > 0) {
                     String message = "You need to grant access to " + permissionsNeeded.get(0);
@@ -1022,7 +1022,7 @@ public class HomeNavigation extends AppCompatActivity implements ResponseListene
            case REQUEST_CODE_ASK_MULTIPLE_PERMISSIONS:
                 Map<String, Integer> perms = new HashMap<String, Integer>();
                 perms.put(android.Manifest.permission.RECORD_AUDIO, PackageManager.PERMISSION_GRANTED);
-                perms.put(android.Manifest.permission.CALL_PHONE, PackageManager.PERMISSION_GRANTED);
+                //perms.put(android.Manifest.permission.CALL_PHONE, PackageManager.PERMISSION_GRANTED);
                 perms.put(android.Manifest.permission.CAMERA, PackageManager.PERMISSION_GRANTED);
                 perms.put(android.Manifest.permission.WRITE_EXTERNAL_STORAGE, PackageManager.PERMISSION_GRANTED);
                 perms.put(Manifest.permission.ACCESS_COARSE_LOCATION, PackageManager.PERMISSION_GRANTED);
@@ -1032,11 +1032,11 @@ public class HomeNavigation extends AppCompatActivity implements ResponseListene
                     Utility.getInstance().showToast("record audio permission denied", getApplicationContext());
                     finish();
                     return;
-                } else if( perms.get(android.Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_DENIED) {
+                } /*else if( perms.get(android.Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_DENIED) {
                     Utility.getInstance().showToast("phone call permission denied", getApplicationContext());
                     finish();
                     return;
-                } else if( perms.get(android.Manifest.permission.CAMERA) == PackageManager.PERMISSION_DENIED) {
+                }*/ else if( perms.get(android.Manifest.permission.CAMERA) == PackageManager.PERMISSION_DENIED) {
                     Utility.getInstance().showToast("camera storage permission denied", getApplicationContext());
                     finish();
                     return;
