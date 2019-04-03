@@ -451,7 +451,7 @@ public class ChatBotActivity extends AppCompatActivity implements Callback<ListD
                 Consts.Commom_Flag = "3";
                 Rob.add(new Left_Robert("Thank you!   ", "0", Consts.Common_gender));
                 Rob.add(new Left_Robert("What concerns you most about your health?", "0", ""));
-                Rob.add(new Left_Robert("Enter your Health Symptoms to Understand what could be wrong (Example:-\"Cold\" \"Fever\" \"Back Pain\")", "0", ""));
+                Rob.add(new Left_Robert("Enter your Health Symptoms to Understand what could be wrong (Example:-\"Headache\" \"Fever\" \"Back Pain\")", "0", ""));
                 c_botAdapter = new C_BotAdapter(ChatBotActivity.this, Rob);
                 chatview.setAdapter(c_botAdapter);
                 LinearLayoutManager layoutManager = new LinearLayoutManager(ChatBotActivity.this);
@@ -581,7 +581,6 @@ public class ChatBotActivity extends AppCompatActivity implements Callback<ListD
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
-
             session.setChat_No("");
             session.setChat_Yes("");
             session.setText_chat("");

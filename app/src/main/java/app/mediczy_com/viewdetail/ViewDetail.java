@@ -44,6 +44,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.ViewAnimator;
 import com.sinch.android.rtc.SinchError;
 import com.sinch.android.rtc.calling.Call;
@@ -816,6 +817,7 @@ public class ViewDetail extends VideoCallBaseActivity_ViewDetail implements Resp
             Intent callIntent = new Intent(Intent.ACTION_CALL);
             callIntent.setData(Uri.parse("tel:" + resNumber));
             startActivity(callIntent);*/
+            Toast.makeText(viewDetail, "Please wait... You will receive an incoming call", Toast.LENGTH_SHORT).show();
             ReqType="phoneCall";
             onRequest(ReqType);
         } else {
@@ -878,7 +880,7 @@ public class ViewDetail extends VideoCallBaseActivity_ViewDetail implements Resp
         startActivity(callScreen);
     }
 
-    private void placePhoneCall() {
+    /*private void placePhoneCall() {
         if (Build.VERSION.SDK_INT >= 23) {
             if ((ActivityCompat.checkSelfPermission(ViewDetail.this, Manifest.permission.CALL_PHONE) ==
                             PackageManager.PERMISSION_GRANTED)) {
@@ -890,6 +892,11 @@ public class ViewDetail extends VideoCallBaseActivity_ViewDetail implements Resp
         }else {
             phoneCall();
         }
+    }*/
+
+    private void placePhoneCall() {
+
+            phoneCall();
     }
 
     private void placeVideoCall() {
