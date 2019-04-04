@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Mediczy</string>
-    <string name="versionCode">27</string>
-    <string name="versionName">5.2</string>
+    <string name="versionCode">28</string>
+    <string name="versionName">5.3</string>
     <string name="buildType">P</string>
     <!--    <string name="Map_API_Live_KEY">AIzaSyAq9-XE6qhjjoI0xT8_oN6KhX2ZDgODKR0</string>-->
     <string name="Map_API_Live_KEY">AIzaSyAtSeQpU-VHzGPY5MFx8mHb7woi8z5fBjo</string>

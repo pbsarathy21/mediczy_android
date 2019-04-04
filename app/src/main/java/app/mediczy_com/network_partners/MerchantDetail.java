@@ -549,7 +549,7 @@ public class MerchantDetail extends BaseActivity implements ResponseListener, Vi
         }
     }
 
-    private void callButtonClicked() {
+   /* private void callButtonClicked() {
         if (Build.VERSION.SDK_INT >= 23) {
             Intent callIntent = new Intent(Intent.ACTION_CALL);
             callIntent.setData(Uri.parse("tel:" + res.detail.contact_no));
@@ -564,6 +564,23 @@ public class MerchantDetail extends BaseActivity implements ResponseListener, Vi
             callIntent.setData(Uri.parse("tel:" + res.detail.contact_no));
             context.startActivity(callIntent);
         }
+    }*/
+
+    private void callButtonClicked() {
+       /* if (Build.VERSION.SDK_INT >= 23) {
+            Intent callIntent = new Intent(Intent.ACTION_CALL);
+            callIntent.setData(Uri.parse("tel:" + res.detail.contact_no));
+            if (ActivityCompat.checkSelfPermission(context, Manifest.permission.CALL_PHONE)
+                    == PackageManager.PERMISSION_GRANTED) {
+                context.startActivity(callIntent);
+            }else {
+                ActivityCompat.requestPermissions((Activity) context, new String[]{Manifest.permission.CALL_PHONE}, 1);
+            }
+        }else {
+            Intent callIntent = new Intent(Intent.ACTION_CALL);
+            callIntent.setData(Uri.parse("tel:" + res.detail.contact_no));
+            context.startActivity(callIntent);
+        }*/
     }
 
     private void showConversationActivity() {

@@ -754,25 +754,10 @@ public class Register extends AppCompatActivity implements View.OnClickListener,
         dialog.show();
     }
 
-    public  boolean isStoragePermissionGranted() {
-        if (Build.VERSION.SDK_INT >= 23) {
-            if (checkSelfPermission(Manifest.permission.RECEIVE_SMS)
-                    == PackageManager.PERMISSION_GRANTED) {
-                onRequest();
-                return true;
-            } else {
 
-                //   Log.v(TAG,"Permission is revoked");
-                //ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.RECEIVE_SMS}, 1);
-                onRequest();
-                return true;
-            }
-        }
-        else { //permission is automatically granted on sdk<23 upon installation
-            // Log.v(TAG,"Permission is granted");
+    public boolean isStoragePermissionGranted() {
             onRequest();
             return true;
-        }
     }
 
     @Override

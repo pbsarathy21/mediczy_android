@@ -907,8 +907,8 @@ public class ViewDetail extends VideoCallBaseActivity_ViewDetail implements Resp
                 permissionsNeeded.add("RECORD_AUDIO");
             if (!addPermission(permissionsList, Manifest.permission.CAMERA))
                 permissionsNeeded.add("CAMERA");
-            if (!addPermission(permissionsList, Manifest.permission.CALL_PHONE))
-                permissionsNeeded.add("CALL_PHONE");
+            /*if (!addPermission(permissionsList, Manifest.permission.CALL_PHONE))
+                permissionsNeeded.add("CALL_PHONE");*/
             if (permissionsList.size() > 0) {
                 if (permissionsNeeded.size() > 0) {
                     // Need Rationale
@@ -977,15 +977,15 @@ public class ViewDetail extends VideoCallBaseActivity_ViewDetail implements Resp
 
             case REQUEST_PHONE_PERMISSIONS:
                 Map<String, Integer> perms_phone = new HashMap<String, Integer>();
-                perms_phone.put(android.Manifest.permission.CALL_PHONE, PackageManager.PERMISSION_GRANTED);
+                //perms_phone.put(android.Manifest.permission.CALL_PHONE, PackageManager.PERMISSION_GRANTED);
                 // Fill with results
                 for (int i = 0; i < permissions.length; i++)
                     perms_phone.put(permissions[i], grantResults[i]);
-                if( perms_phone.get(android.Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_DENIED) {
+                /*if( perms_phone.get(android.Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_DENIED) {
                     Utility.getInstance().showToast("phone call permission denied", ViewDetail.this);
                 } else {
                     phoneCall();
-                }
+                }*/
                 break;
 
             default:

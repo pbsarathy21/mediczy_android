@@ -93,7 +93,7 @@ public class Profile_Edit_Photo extends AppCompatActivity implements ResponseLis
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         init();
 
-        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+      /*  gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long io) {
                 String image_path = array_image_path.get(position);
@@ -113,6 +113,21 @@ public class Profile_Edit_Photo extends AppCompatActivity implements ResponseLis
                 }else {
                     selectedImage();
                 }
+            }
+        });*/
+
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long io) {
+
+                String image_path = array_image_path.get(position);
+                doctor_banner_id = array_doctor_banner_id.get(position);
+                selectedImagePosition = position;
+                MLog.e("selectedImagePosition", "" + selectedImagePosition);
+                MLog.e("doctor_banner_id", "" + doctor_banner_id);
+                MLog.e("image_path", "" + image_path);
+
+                selectedImage();
             }
         });
     }

@@ -58,7 +58,7 @@ public class Ambulance_Adapter extends RecyclerView.Adapter<Ambulance_Adapter.Vi
         viewHolder.Iv_Call.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String Number = arrayList.get(position).getNumber();
+               /* String Number = arrayList.get(position).getNumber();
                 if (Build.VERSION.SDK_INT >= 23) {
                     Intent callIntent = new Intent(Intent.ACTION_CALL);
                     callIntent.setData(Uri.parse("tel:" + Number));
@@ -73,7 +73,7 @@ public class Ambulance_Adapter extends RecyclerView.Adapter<Ambulance_Adapter.Vi
                     Intent callIntent = new Intent(Intent.ACTION_CALL);
                     callIntent.setData(Uri.parse("tel:" + Number));
                     context.startActivity(callIntent);
-                }
+                }*/
             }
         });
     }
